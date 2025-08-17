@@ -3,18 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { BedDouble, Bath, Square, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
-type Property = {
-  id: number;
-  title: string;
-  price: string;
-  address: string;
-  bedrooms: number;
-  bathrooms: number;
-  sqft: number;
-  imageUrl: string;
-  imageHint: string;
-};
+import { Property } from "@/lib/properties";
 
 interface PropertyCardProps {
   property: Property;

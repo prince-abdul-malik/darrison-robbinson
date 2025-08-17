@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/#sellers", label: "Sellers" },
   { href: "/#contact", label: "Contact" },
   { href: "/ai-description-generator", label: "AI Tool" },
+  { href: "/admin/properties", label: "Admin" },
 ];
 
 export function Header() {

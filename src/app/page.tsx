@@ -8,53 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { KeyRound, Users, Wallet, Home as HomeIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const featuredProperties = [
-  {
-    id: 1,
-    title: "Charming Suburban Home",
-    price: "350,000",
-    address: "123 Main St, Lexington, SC",
-    bedrooms: 4,
-    bathrooms: 3,
-    sqft: 2400,
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "modern house exterior",
-  },
-  {
-    id: 2,
-    title: "Modern Downtown Condo",
-    price: "275,000",
-    address: "456 Oak Ave, Lexington, SC",
-    bedrooms: 2,
-    bathrooms: 2,
-    sqft: 1200,
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "apartment building",
-  },
-  {
-    id: 3,
-    title: "Spacious Family Residence",
-    price: "480,000",
-    address: "789 Pine Ln, Lexington, SC",
-    bedrooms: 5,
-    bathrooms: 4,
-    sqft: 3200,
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "large suburban house",
-  },
-  {
-    id: 4,
-    title: "Cozy Lakeside Cottage",
-    price: "410,000",
-    address: "101 Lake Rd, Lexington, SC",
-    bedrooms: 3,
-    bathrooms: 2,
-    sqft: 1800,
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "house lake",
-  },
-];
+import { getProperties, Property } from "@/lib/properties";
 
 const buyerResources = [
   {
@@ -92,7 +46,9 @@ const sellerResources = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const featuredProperties = await getProperties();
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -127,7 +83,7 @@ export default function Home() {
               {featuredProperties.map((property) => (
                 <CarouselItem key={property.id} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
-                    <PropertyCard property={property} />
+                    <PropertyCard property={property as Property} />
                   </div>
                 </CarouselItem>
               ))}
