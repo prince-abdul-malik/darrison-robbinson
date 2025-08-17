@@ -53,16 +53,17 @@ export default async function Home() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
-        <section id="home" className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white -mt-20 pt-20">
-          <Image
-            src="https://placehold.co/1920x1080.png"
-            alt="Beautiful neighborhood in Lexington, SC"
-            data-ai-hint="suburban neighborhood"
-            layout="fill"
-            objectFit="cover"
-            className="z-0"
-            priority
-          />
+        <section id="home" className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white -mt-20 pt-20 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="absolute inset-0 bg-black/50 z-10" />
           <div className="z-20 container mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-lg">Find Your Dream Home in Lexington</h1>
