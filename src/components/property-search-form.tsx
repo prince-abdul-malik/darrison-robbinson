@@ -46,27 +46,29 @@ export function PropertySearchForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
-          <FormField
-            control={form.control}
-            name="location"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="flex items-center gap-2"><MapPin size={16}/> Location</FormLabel>
-                <FormControl>
-                  <Input placeholder="City, State, or Zip Code" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+          <div className="lg:col-span-2">
+            <FormField
+              control={form.control}
+              name="location"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="flex items-center gap-2 font-semibold"><MapPin size={16}/> Location</FormLabel>
+                  <FormControl>
+                    <Input placeholder="City, State, or Zip Code" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
           <FormField
             control={form.control}
             name="propertyType"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="flex items-center gap-2"><Home size={16}/> Property Type</FormLabel>
+                <FormLabel className="flex items-center gap-2 font-semibold"><Home size={16}/> Type</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
@@ -92,7 +94,7 @@ export function PropertySearchForm() {
               name="bedrooms"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center gap-2"><Bed size={16}/> Beds</FormLabel>
+                  <FormLabel className="flex items-center gap-2 font-semibold"><Bed size={16}/> Beds</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
@@ -117,7 +119,7 @@ export function PropertySearchForm() {
               name="bathrooms"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center gap-2"><Bath size={16}/> Baths</FormLabel>
+                  <FormLabel className="flex items-center gap-2 font-semibold"><Bath size={16}/> Baths</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
@@ -137,10 +139,10 @@ export function PropertySearchForm() {
               )}
             />
           </div>
-
-          <Button type="submit" className="w-full h-10 bg-accent hover:bg-accent/90 text-accent-foreground">
+          
+          <Button type="submit" className="w-full h-10 font-bold">
             <Search size={18} className="mr-2"/>
-            Search Properties
+            Search
           </Button>
         </div>
         
@@ -149,8 +151,8 @@ export function PropertySearchForm() {
           name="priceRange"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="flex items-center gap-2"><DollarSign size={16}/> Price Range</FormLabel>
-              <div className="text-sm font-medium text-center text-muted-foreground">
+              <FormLabel className="flex items-center gap-2 font-semibold"><DollarSign size={16}/> Price Range</FormLabel>
+              <div className="text-sm font-bold text-center text-foreground">
                 ${priceRange[0].toLocaleString()} - ${priceRange[1].toLocaleString()}{priceRange[1] === 1000000 ? '+' : ''}
               </div>
               <FormControl>

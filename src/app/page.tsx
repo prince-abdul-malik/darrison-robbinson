@@ -53,7 +53,7 @@ export default async function Home() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
-        <section id="home" className="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center text-white -mt-20 pt-20 overflow-hidden">
+        <section id="home" className="relative h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white -mt-20 pt-20 overflow-hidden">
           <video
             autoPlay
             loop
@@ -64,20 +64,20 @@ export default async function Home() {
             <source src="/hero-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 bg-black/50 z-10" />
-          <div className="z-20 container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-lg">Find Your Dream Home in Lexington</h1>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent z-10" />
+          <div className="z-20 container mx-auto px-6 md:px-10">
+            <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-lg leading-tight">Find Your Dream Home in Lexington</h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">
               Your trusted partner in navigating the Lexington, SC real estate market.
             </p>
           </div>
         </section>
 
-        <div className="bg-background/80 backdrop-blur-sm -mt-24 relative z-20 container mx-auto p-6 rounded-lg shadow-2xl">
+        <div className="bg-background -mt-24 relative z-20 container mx-auto p-6 rounded-lg shadow-2xl border">
           <PropertySearchForm />
         </div>
 
-        <section id="featured" className="container mx-auto px-4">
+        <section id="featured" className="container mx-auto px-6 md:px-10">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">Featured Properties</h2>
           <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent>
@@ -95,14 +95,14 @@ export default async function Home() {
         </section>
 
         <section id="buyers" className="bg-secondary/50">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-10">
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">Resources for Buyers</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {buyerResources.map((resource, index) => (
                 <Card key={index} className="bg-card/80 border-2 border-transparent hover:border-primary transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
                   <CardHeader className="flex flex-row items-center gap-4">
                     <resource.icon className="w-8 h-8 text-primary" />
-                    <CardTitle className="text-xl font-headline">{resource.title}</CardTitle>
+                    <CardTitle className="text-xl font-bold">{resource.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{resource.description}</p>
@@ -113,7 +113,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="sellers" className="container mx-auto px-4">
+        <section id="sellers" className="container mx-auto px-6 md:px-10">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Thinking of Selling?</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12">
@@ -124,7 +124,7 @@ export default async function Home() {
                 <Card key={index} className="bg-card/80 border-2 border-transparent hover:border-primary transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
                     <CardHeader className="flex flex-row items-center gap-4">
                     <resource.icon className="w-8 h-8 text-primary" />
-                    <CardTitle className="text-xl font-headline">{resource.title}</CardTitle>
+                    <CardTitle className="text-xl font-bold">{resource.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                     <p className="text-muted-foreground">{resource.description}</p>
@@ -132,12 +132,12 @@ export default async function Home() {
                 </Card>
                 ))}
             </div>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">Get a Free Home Valuation</Button>
+            <Button size="lg" className="font-bold">Get a Free Home Valuation</Button>
           </div>
         </section>
         
         <section id="contact" className="bg-secondary/50">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Get In Touch</h2>

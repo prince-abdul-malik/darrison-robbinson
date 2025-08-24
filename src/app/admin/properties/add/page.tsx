@@ -7,7 +7,7 @@ export default function AddPropertyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-12">
+      <main className="flex-grow container mx-auto px-6 md:px-10 py-12">
         <div className="max-w-2xl mx-auto">
             <Card>
                 <CardHeader>
