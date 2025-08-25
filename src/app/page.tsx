@@ -139,7 +139,7 @@ export default async function Home() {
                <div className="order-1 md:order-2 flex justify-center">
                     <div className="relative">
                         <Avatar className="w-60 h-60 md:w-80 md:h-80 border-4 border-primary shadow-lg">
-                            <Image src="https://placehold.co/400x400.png" alt="Ben Abotsi" data-ai-hint="man portrait" width={400} height={400} />
+                            <AvatarImage src="/ben-abotsi.png" alt="Ben Abotsi" />
                             <AvatarFallback>BA</AvatarFallback>
                         </Avatar>
                     </div>
