@@ -6,8 +6,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'Lexington Living',
-  description: 'Your trusted real estate partner in Lexington, SC.',
+  title: 'Ben Abotsi - Your Veteran Realtor',
+  description: 'Your trusted real estate partner in Fort Walton Beach, FL.',
 };
 
 export default function RootLayout({

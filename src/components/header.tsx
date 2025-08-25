@@ -5,13 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Home } from "lucide-react";
+import { Menu, Home, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#featured", label: "Listings" },
   { href: "/#buyers", label: "Buyers" },
-  { href: "/#sellers", label: "Sellers" },
   { href: "/#contact", label: "Contact" },
   { href: "/ai-description-generator", label: "AI Tool" },
   { href: "/admin/properties", label: "Admin" },
@@ -60,9 +61,12 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl font-headline">
-          <Home className="h-7 w-7 text-primary" />
-          <span>Lexington Living</span>
+        <Link href="/" className="flex items-center gap-3 font-bold text-lg font-headline">
+          <Award className="h-7 w-7 text-primary" />
+          <div>
+            <span className="block text-xl">Ben Abotsi</span>
+            <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR VETERAN REALTOR</span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -79,9 +83,12 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-background">
               <div className="p-6">
-                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="mb-8 flex items-center gap-2 font-bold text-xl font-headline">
-                  <Home className="h-7 w-7 text-primary" />
-                  <span>Lexington Living</span>
+                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="mb-8 flex items-center gap-3 font-bold text-lg font-headline">
+                   <Award className="h-7 w-7 text-primary" />
+                   <div>
+                        <span className="block text-xl">Ben Abotsi</span>
+                        <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR VETERAN REALTOR</span>
+                    </div>
                 </Link>
                 <nav className="flex flex-col gap-4">
                   <NavLinkItems isMobile />
