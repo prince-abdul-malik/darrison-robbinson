@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Home, Award } from "lucide-react";
+import { Menu, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -62,10 +62,10 @@ export function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-3 font-bold text-lg font-headline">
-          <Award className="h-7 w-7 text-primary" />
+          <Home className="h-7 w-7 text-primary" />
           <div>
-            <span className="block text-xl">Ben Abotsi</span>
-            <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR VETERAN REALTOR</span>
+            <span className="block text-xl">Jane Doe</span>
+            <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR TRUSTED REALTOR</span>
           </div>
         </Link>
 
@@ -84,10 +84,10 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] bg-background">
               <div className="p-6">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="mb-8 flex items-center gap-3 font-bold text-lg font-headline">
-                   <Award className="h-7 w-7 text-primary" />
+                   <Home className="h-7 w-7 text-primary" />
                    <div>
-                        <span className="block text-xl">Ben Abotsi</span>
-                        <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR VETERAN REALTOR</span>
+                        <span className="block text-xl">Jane Doe</span>
+                        <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR TRUSTED REALTOR</span>
                     </div>
                 </Link>
                 <nav className="flex flex-col gap-4">

@@ -6,7 +6,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'Ben Abotsi - Your Veteran Realtor',
+  title: 'Jane Doe - Your Trusted Realtor',
   description: 'Your trusted real estate partner in Fort Walton Beach, FL.',
 };
 

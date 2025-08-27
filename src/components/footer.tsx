@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Award, Facebook, Twitter, Instagram } from "lucide-react";
+import { Home, Facebook, Twitter, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -7,14 +7,14 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <Link href="/" className="flex items-center gap-3 font-bold text-lg font-headline">
-            <Award className="h-7 w-7 text-primary" />
+            <Home className="h-7 w-7 text-primary" />
             <div>
-              <span className="block text-xl">Ben Abotsi</span>
-              <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR VETERAN REALTOR</span>
+              <span className="block text-xl">Jane Doe</span>
+              <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR TRUSTED REALTOR</span>
             </div>
           </Link>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Ben Abotsi. All Rights Reserved.
+            © {new Date().getFullYear()} Jane Doe Realty. All Rights Reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">

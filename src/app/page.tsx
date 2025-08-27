@@ -6,7 +6,7 @@ import { PropertyCard } from "@/components/property-card";
 import { ContactForm } from "@/components/contact-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { KeyRound, Users, Wallet, Home as HomeIcon, Award, GraduationCap } from "lucide-react";
+import { KeyRound, Users, Wallet, Home as HomeIcon, Award, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProperties, Property } from "@/lib/properties";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -69,7 +69,7 @@ export default async function Home() {
           <div className="z-20 container mx-auto px-6 md:px-10">
             <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-lg leading-tight">Find Your Dream Home in Fort Walton Beach</h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">
-              Your Veteran Realtor Ben: Guiding you home in the Fort Walton Beach, FL area.
+              Your Trusted Realtor Jane: Guiding you home in the Fort Walton Beach, FL area.
             </p>
           </div>
         </section>
@@ -109,29 +109,29 @@ export default async function Home() {
           <div className="container mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1">
-                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">About Ben Abotsi</h2>
+                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">About Jane Doe</h2>
                 <p className="text-lg text-muted-foreground mb-6 font-semibold">
-                  "Your Veteran Realtor Ben"
+                  "Your Trusted Real Estate Advisor"
                 </p>
                 <p className="mb-4 text-muted-foreground">
-                  As a U.S. Army veteran and former aviation mechanic, I bring a unique blend of discipline, precision, and service to my real estate career. My journey from Ghana to serving our country has instilled in me a deep commitment to helping others achieve their dreams.
+                  With a passion for service and a deep love for the Fort Walton Beach area, I am dedicated to helping my clients find their perfect home. My background in business and marketing gives me a unique edge in negotiating the best deals and marketing properties effectively.
                 </p>
                 <p className="mb-6 text-muted-foreground">
-                  Now, I'm dedicated to helping you navigate the Fort Walton Beach property market. Whether you're buying your first home, selling, or investing, I'm here to provide you with a smooth and successful experience with Coldwell Banker Realty.
+                  I believe that buying or selling a home is more than just a transaction; it's a life-changing experience. That's why I am dedicated to providing exceptional, personalized service for all of my clients with Coldwell Banker Realty.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
                     <div className="flex items-center gap-3">
                         <Award className="w-7 h-7 text-primary"/>
                         <div>
-                            <h3 className="font-bold">US Army Veteran</h3>
-                            <p className="text-muted-foreground">Aviation Mechanic</p>
+                            <h3 className="font-bold">Top Producer Award</h3>
+                            <p className="text-muted-foreground">2023 Coldwell Banker</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <GraduationCap className="w-7 h-7 text-primary"/>
+                        <Briefcase className="w-7 h-7 text-primary"/>
                         <div>
-                            <h3 className="font-bold">Educated & Driven</h3>
-                            <p className="text-muted-foreground">Texas A&M University-Corpus Christi</p>
+                            <h3 className="font-bold">10+ Years Experience</h3>
+                            <p className="text-muted-foreground">Marketing & Negotiation</p>
                         </div>
                     </div>
                 </div>
@@ -139,8 +139,8 @@ export default async function Home() {
                <div className="order-1 md:order-2 flex justify-center">
                     <div className="relative">
                         <Avatar className="w-60 h-60 md:w-80 md:h-80 border-4 border-primary shadow-lg">
-                            <AvatarImage src="/ben-abotsi.jpg" alt="Ben Abotsi" />
-                            <AvatarFallback>BA</AvatarFallback>
+                            <AvatarImage src="https://placehold.co/400x400.png" alt="Jane Doe" />
+                            <AvatarFallback>JD</AvatarFallback>
                         </Avatar>
                     </div>
                 </div>
@@ -199,8 +199,8 @@ export default async function Home() {
                   Ready to start your real estate journey in Fort Walton Beach? Send me a message, and I'll get back to you promptly.
                 </p>
                 <div className="space-y-4 text-muted-foreground">
-                  <p><strong>Email:</strong> ben.abotsi@cbrealty.com</p>
-                  <p><strong>Phone:</strong> (850) 555-0101</p>
+                  <p><strong>Email:</strong> jane.doe@cbrealty.com</p>
+                  <p><strong>Phone:</strong> (850) 555-0102</p>
                   <p><strong>Office:</strong> 123 Miracle Strip Pkwy SE, Fort Walton Beach, FL 32548</p>
                 </div>
               </div>
