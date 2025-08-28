@@ -14,8 +14,6 @@ const navLinks = [
   { href: "/#about", label: "About" },
   { href: "/#featured", label: "Listings" },
   { href: "/#buyers", label: "Buyers" },
-  { href: "/#contact", label: "Contact" },
-  { href: "/admin/properties", label: "Admin" },
 ];
 
 export function Header() {
@@ -71,6 +69,9 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-6">
           <NavLinkItems />
+           <Button asChild>
+            <Link href="/#contact">Contact Agent</Link>
+          </Button>
         </nav>
 
         <div className="md:hidden">
@@ -92,6 +93,9 @@ export function Header() {
                 </Link>
                 <nav className="flex flex-col gap-4">
                   <NavLinkItems isMobile />
+                  <Button asChild>
+                    <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>Contact Agent</Link>
+                  </Button>
                 </nav>
               </div>
             </SheetContent>

@@ -10,7 +10,7 @@ const propertySchema = z.object({
   bedrooms: z.number(),
   bathrooms: z.number(),
   sqft: z.number(),
-  imageUrl: z.string().url(),
+  imageUrl: z.string(),
   imageHint: z.string(),
 });
 
@@ -48,6 +48,11 @@ async function writePropertiesFile(properties: Property[]): Promise<void> {
 
 export async function getProperties(): Promise<Property[]> {
   return await readPropertiesFile();
+}
+
+export async function getPropertyById(id: number): Promise<Property | undefined> {
+    const properties = await readPropertiesFile();
+    return properties.find(p => p.id === id);
 }
 
 export async function addProperty(propertyData: Omit<Property, 'id'>): Promise<Property> {

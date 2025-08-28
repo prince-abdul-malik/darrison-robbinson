@@ -7,7 +7,29 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1800,
-    "imageUrl": "https://placehold.co/600x400.png",
-    "imageHint": "beach cottage exterior"
+    "imageUrl": "https://picsum.photos/600/400",
+    "imageHint": "beach cottage"
+  },
+  {
+    "id": 2,
+    "title": "Modern Downtown Condo",
+    "price": "320000",
+    "address": "456 Main St, Fort Walton Beach, FL",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "sqft": 1200,
+    "imageUrl": "https://picsum.photos/600/400",
+    "imageHint": "modern condo"
+  },
+  {
+    "id": 3,
+    "title": "Spacious Family Home",
+    "price": "580000",
+    "address": "789 Suburbia Ln, Fort Walton Beach, FL",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "sqft": 2500,
+    "imageUrl": "https://picsum.photos/600/400",
+    "imageHint": "suburban house"
   }
 ]
