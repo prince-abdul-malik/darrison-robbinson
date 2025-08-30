@@ -139,7 +139,7 @@ export default async function Home() {
                <div className="order-1 md:order-2 flex justify-center">
                     <div className="relative">
                         <Avatar className="w-60 h-60 md:w-80 md:h-80 border-4 border-primary shadow-lg">
-                            <AvatarImage src="/agent-photo.png" alt="Real Estate Agent" />
+                            <AvatarImage src="/agent-photo.jpg" alt="Real Estate Agent" />
                             <AvatarFallback>JD</AvatarFallback>
                         </Avatar>
                     </div>

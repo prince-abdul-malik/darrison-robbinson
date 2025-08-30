@@ -7,7 +7,7 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1800,
-    "imageUrl": "https://picsum.photos/600/400",
+    "imageUrl": "/property-2.png",
     "imageHint": "beach cottage"
   },
   {
@@ -18,7 +18,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 1200,
-    "imageUrl": "https://picsum.photos/600/400",
+    "imageUrl": "/property-3.png",
     "imageHint": "modern condo"
   },
   {
@@ -29,7 +29,7 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2500,
-    "imageUrl": "https://picsum.photos/600/400",
+    "imageUrl": "/property-4.png",
     "imageHint": "suburban house"
   }
 ]
