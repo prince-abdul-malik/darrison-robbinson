@@ -97,7 +97,7 @@ export default async function HomePage() {
         
         <section id="home" className="relative h-[80vh] flex items-center justify-center text-white">
             <Image 
-                src="https://picsum.photos/1920/1080"
+                src="https://picsum.photos/seed/realty/1920/1080"
                 alt="Beautiful home exterior"
                 data-ai-hint="beautiful house exterior"
                 fill
@@ -356,5 +356,3 @@ export default async function HomePage() {
     </div>
   );
 }
-
-    
