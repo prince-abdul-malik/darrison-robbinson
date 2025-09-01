@@ -13,7 +13,6 @@ interface PropertyCardProps {
 export function PropertyCard({ property }: PropertyCardProps) {
   return (
     <Card className="w-full h-full flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
-      <Link href={`/properties/${property.id}`} className="flex flex-col h-full">
         <CardHeader className="p-0 relative">
           <Image
             src={property.imageUrl}
@@ -46,9 +45,12 @@ export function PropertyCard({ property }: PropertyCardProps) {
           </div>
         </CardContent>
         <CardFooter className="p-4 pt-0 mt-auto">
-          <Button className="w-full font-bold">View Details</Button>
+          <Button asChild className="w-full font-bold">
+            <Link href="#" target="_blank" rel="noopener noreferrer">View on Zillow</Link>
+          </Button>
         </CardFooter>
-      </Link>
     </Card>
   );
 }
+
+    

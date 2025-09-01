@@ -6,6 +6,8 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BedDouble, Bath, Square, MapPin, Building, Calendar, LandPlot } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function PropertyDetailsPage({ params }: { params: { id: string } }) {
   const propertyId = parseInt(params.id, 10);
@@ -42,8 +44,11 @@ export default async function PropertyDetailsPage({ params }: { params: { id: st
                     />
                 </CardHeader>
                 <CardContent className="p-6 md:p-8">
-                    <div className="mb-6">
+                    <div className="flex justify-between items-start mb-6">
                         <Badge className="text-lg font-bold">${Number(property.price).toLocaleString()}</Badge>
+                         <Button asChild>
+                            <Link href="#" target="_blank" rel="noopener noreferrer">View on Zillow</Link>
+                        </Button>
                     </div>
                     <CardTitle className="text-3xl md:text-4xl font-headline mb-2">{property.title}</CardTitle>
                     <CardDescription className="flex items-center gap-2 text-lg text-muted-foreground mb-8">
@@ -51,7 +56,7 @@ export default async function PropertyDetailsPage({ params }: { params: { id: st
                     </CardDescription>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 mb-8 border-t border-b py-8">
-                        {details.slice(1).map(detail => (
+                        {details.slice(1, -3).map(detail => (
                             <div key={detail.label} className="flex flex-col items-center text-center gap-2">
                                 {detail.icon}
                                 <span className="text-xl font-bold">{detail.value.split(' ')[0]}</span>
@@ -61,9 +66,20 @@ export default async function PropertyDetailsPage({ params }: { params: { id: st
                     </div>
 
                     <h3 className="text-2xl font-headline font-bold mb-4">Property Description</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed mb-8">
                         Welcome to this stunning {property.bedrooms}-bedroom, {property.bathrooms}-bathroom home located at {property.address}. Spanning {property.sqft.toLocaleString()} square feet, this property offers a perfect blend of comfort and style. The open-concept living area is ideal for both relaxing and entertaining. The modern kitchen is equipped with high-end appliances and ample storage. The master suite features a luxurious private bathroom and a spacious walk-in closet. Enjoy the beautiful Florida weather in the private backyard. This home is conveniently located near shops, restaurants, and beautiful beaches. Don't miss the opportunity to make this your new dream home!
                     </p>
+
+                     <h3 className="text-2xl font-headline font-bold mb-4">Key Details</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-muted-foreground">
+                        {details.slice(-3).map(detail => (
+                            <div key={detail.label} className="flex justify-between border-b pb-2">
+                                <span className="font-semibold">{detail.label}</span>
+                                <span>{detail.value}</span>
+                            </div>
+                        ))}
+                    </div>
+
                 </CardContent>
             </Card>
         </div>
@@ -72,3 +88,5 @@ export default async function PropertyDetailsPage({ params }: { params: { id: st
     </div>
   );
 }
+
+    
