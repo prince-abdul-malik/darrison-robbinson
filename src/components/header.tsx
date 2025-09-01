@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -10,10 +10,11 @@ import { Menu, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/#home", label: "Home" },
   { href: "/#about", label: "About" },
-  { href: "/#featured", label: "Listings" },
-  { href: "/#buyers", label: "Buyers" },
+  { href: "/#neighborhoods", label: "Neighborhoods" },
+  { href: "/#listings", label: "Listings" },
+  { href: "/#resources", label: "Resources" },
+  { href: "/#market-updates", label: "Updates" },
 ];
 
 export function Header() {

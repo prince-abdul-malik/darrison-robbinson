@@ -42,17 +42,20 @@ export default async function PropertyDetailsPage({ params }: { params: { id: st
                     />
                 </CardHeader>
                 <CardContent className="p-6 md:p-8">
+                    <div className="mb-6">
+                        <Badge className="text-lg font-bold">${Number(property.price).toLocaleString()}</Badge>
+                    </div>
                     <CardTitle className="text-3xl md:text-4xl font-headline mb-2">{property.title}</CardTitle>
                     <CardDescription className="flex items-center gap-2 text-lg text-muted-foreground mb-8">
                         <MapPin size={18} /> {property.address}
                     </CardDescription>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8 mb-8 border-t border-b py-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8 mb-8 border-t border-b py-8">
                         {details.slice(1).map(detail => (
                             <div key={detail.label} className="flex flex-col items-center text-center gap-2">
                                 {detail.icon}
                                 <span className="text-xl font-bold">{detail.value.split(' ')[0]}</span>
-                                <span className="text-muted-foreground text-sm">{detail.value.split(' ').slice(1).join(' ')}</span>
+                                <span className="text-muted-foreground text-sm">{detail.label}</span>
                             </div>
                         ))}
                     </div>

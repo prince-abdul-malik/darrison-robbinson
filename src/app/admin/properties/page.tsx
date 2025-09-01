@@ -12,7 +12,6 @@ export default async function AdminPropertiesPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <Header />
       <main className="flex-grow container mx-auto px-6 md:px-10 py-12">
         <Card>
             <CardHeader className="flex flex-row items-center justify-between">
