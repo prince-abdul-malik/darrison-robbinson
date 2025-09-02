@@ -97,11 +97,11 @@ export default async function HomePage() {
         
         <section id="home" className="relative h-[80vh] flex items-center justify-center text-white">
             <Image 
-                src="/property-3.png"
+                src="/property-3.jpg"
                 alt="Beautiful home exterior"
                 data-ai-hint="beautiful house exterior"
                 fill
-                className="object-cover -z-10"
+                className="object-cover -z-20"
             />
             <div className="absolute inset-0 bg-black/50 -z-10" />
             <div className="container mx-auto px-6 md:px-10 text-center">
