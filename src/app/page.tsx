@@ -97,7 +97,7 @@ export default async function HomePage() {
         
         <section id="home" className="relative h-[80vh] flex items-center justify-center text-white">
             <Image 
-                src="https://picsum.photos/seed/realty/1920/1080"
+                src="/property-3.png"
                 alt="Beautiful home exterior"
                 data-ai-hint="beautiful house exterior"
                 fill
@@ -107,7 +107,7 @@ export default async function HomePage() {
             <div className="container mx-auto px-6 md:px-10 text-center">
                 <div className="flex flex-col items-center">
                      <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-primary shadow-lg mb-4">
-                        <AvatarImage src="/agent-photo.png" alt="Jane Doe" />
+                        <AvatarImage src="/agent-photo.jpg" alt="Jane Doe" />
                         <AvatarFallback>JD</AvatarFallback>
                     </Avatar>
                     <h1 className="text-4xl md:text-6xl font-headline font-bold my-2 leading-tight">Jane Doe</h1>
