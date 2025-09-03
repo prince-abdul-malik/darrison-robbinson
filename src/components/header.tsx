@@ -39,10 +39,9 @@ export function Header() {
           href={link.href}
           onClick={() => isMobile && setMobileMenuOpen(false)}
           className={cn(
-            "text-sm font-medium transition-colors hover:text-primary",
-             (pathname === link.href || (link.href.startsWith('/#') && pathname === '/'))
-              ? "text-primary"
-              : isScrolled || mobileMenuOpen ? "text-foreground/80" : "text-primary-foreground/80 hover:text-primary-foreground",
+            "text-sm font-medium transition-colors",
+            isScrolled ? "text-foreground/80 hover:text-primary" : "text-white/80 hover:text-white",
+            (pathname === link.href || (link.href.startsWith('/#') && pathname === '/')) && (isScrolled ? "text-primary" : "text-white"),
             isMobile && "block py-2 text-lg !text-foreground/80"
           )}
         >
@@ -61,8 +60,8 @@ export function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-6 md:px-10">
         <Link href="/" className="flex items-center gap-3 font-bold text-lg font-headline">
-          <div className={cn("rounded-full p-2 transition-colors", isScrolled ? "bg-primary" : "bg-primary/90")}>
-            <Home className={cn("h-6 w-6 transition-colors", isScrolled ? "text-primary-foreground" : "text-white")} />
+          <div className={cn("rounded-full p-2 transition-colors", isScrolled ? "bg-primary" : "bg-white/90")}>
+            <Home className={cn("h-6 w-6 transition-colors", isScrolled ? "text-primary-foreground" : "text-primary")} />
           </div>
           <div className={cn(isScrolled ? "text-foreground" : "text-white")}>
             <span className="block text-xl">Jane Doe</span>
@@ -110,5 +109,3 @@ export function Header() {
     </header>
   );
 }
-
-    
