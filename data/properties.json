@@ -8,7 +8,7 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1800,
-    "imageUrl": "/property-2.png",
+    "imageUrl": "/property-2.jpg",
     "imageHint": "beach cottage"
   },
   {
@@ -19,7 +19,7 @@
     "bedrooms": 2,
     "bathrooms": 2,
     "sqft": 1200,
-    "imageUrl": "/property-3.png",
+    "imageUrl": "/property-3.jpg",
     "imageHint": "modern condo"
   },
   {
@@ -30,7 +30,7 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2500,
-    "imageUrl": "/property-4.png",
+    "imageUrl": "/property-4.jpg",
     "imageHint": "suburban house"
   }
 ]
