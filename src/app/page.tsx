@@ -86,7 +86,6 @@ const testimonials = [
     }
 ];
 
-
 export default async function HomePage() {
   const featuredProperties = await getProperties();
 
@@ -95,17 +94,18 @@ export default async function HomePage() {
       <Header />
       <main className="flex-grow">
         
-        <section id="home" className="relative h-[80vh] flex items-center justify-center text-white">
+        <section id="home" className="relative h-screen flex items-center justify-center text-white"> {/* Changed h-[80vh] to h-screen to extend image to navbar */}
             <Image 
                 src="/property-3.jpg"
                 alt="Beautiful home exterior"
                 data-ai-hint="beautiful house exterior"
                 fill
-                className="object-cover -z-20"
+                className="object-cover z-0"
+                priority
             />
-            <div className="absolute inset-0 bg-black/50 -z-10" />
-            <div className="container mx-auto px-6 md:px-10 text-center">
-                <div className="flex flex-col items-center">
+            <div className="absolute inset-0 bg-black/50 z-10" />
+            <div className="relative z-20 container mx-auto px-6 md:px-10 text-center flex justify-center items-center"> {/* Added flex justify-center items-center */}
+                <div className="flex flex-col justify-center items-center"> {/* Reinforced centering */}
                      <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-primary shadow-lg mb-4">
                         <AvatarImage src="/agent-photo.jpg" alt="Jane Doe" />
                         <AvatarFallback>JD</AvatarFallback>
