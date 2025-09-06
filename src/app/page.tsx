@@ -155,7 +155,7 @@ export default async function HomePage() {
               </div>
                <div className="flex justify-center">
                     <Image
-                        src="https://picsum.photos/600/700"
+                        src="/agent-full-photo.jpg"
                         alt="Fort Walton Beach scenery"
                         data-ai-hint="florida coast"
                         width={600}
