@@ -50,14 +50,15 @@ export default async function HomePage() {
         
         <section id="home" className="relative h-screen -mt-20 flex items-center justify-center text-white"> 
             <Image 
-                src="/property-3.png"
+                src="/property-3.jpg"
                 alt="Luxurious modern home"
                 data-ai-hint="luxury modern home"
                 fill
                 className="object-cover"
                 priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
             <div className="relative z-20 container mx-auto px-6 md:px-10 text-center flex flex-col items-center"> 
                 <h1 className="text-4xl md:text-7xl font-headline font-bold text-white shadow-lg leading-tight mb-4">Eleanor Vance</h1>
                 <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8">

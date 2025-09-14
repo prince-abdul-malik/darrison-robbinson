@@ -61,7 +61,7 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-8">
           <NavLinkItems />
-           <Button asChild variant={isScrolled ? "default" : "outline"} className={cn(!isScrolled && "text-white border-white hover:bg-white hover:text-black")}>
+           <Button asChild variant={isScrolled ? "default" : "outline"} className={cn(!isScrolled && "text-black border-white hover:bg-white hover:text-black")}>
             <Link href="/#contact">Contact</Link>
           </Button>
         </nav>
