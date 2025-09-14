@@ -26,7 +26,7 @@ export function Footer() {
           </div>
           
           <div className="text-sm text-muted-foreground self-center">
-            <p>&copy; {new Date().getFullYear()} Eleanor Vance Realty. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Eleanor Vance. All Rights Reserved.</p>
           </div>
 
           <div className="flex items-center justify-center md:justify-end gap-5">

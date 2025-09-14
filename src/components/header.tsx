@@ -55,9 +55,19 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-6 md:px-10">
-        <Link href="/" className={cn("font-bold text-2xl font-headline transition-colors", isScrolled ? "text-foreground" : "text-white")}>
-          Eleanor Vance
-        </Link>
+      <Link
+  href="/"
+  className={cn(
+    "font-bold text-2xl font-headline transition-colors",
+    isScrolled ? "text-foreground" : "text-white"
+  )}
+>
+  Eleanor Vance |{" "}
+  <span className="font-roboto font-normal">
+    eXp Realty
+  </span>
+</Link>
+
 
         <nav className="hidden md:flex items-center gap-8">
           <NavLinkItems />
