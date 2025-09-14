@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 const ZillowIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em" {...props}><path d="M16.48.615a1.63 1.63 0 0 0-2.256.448l-7.73 10.453a.683.683 0 0 0 .584 1.04h4.417l-3.35 9.223a.681.681 0 0 0 .633.92.69.69 0 0 0 .6-.29l7.73-10.453a.683.683 0 0 0-.584-1.04H14.12l3.35-9.222a.681.681 0 0 0-.29-.681.703.703 0 0 0-.7-.014Z" /></svg>
@@ -14,10 +15,14 @@ export function Footer() {
     <footer className="bg-secondary/50 border-t">
       <div className="container mx-auto px-4 py-8">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
-          <div className="flex justify-center md:justify-start">
+          <div className="flex flex-col items-center md:items-start gap-4">
             <Link href="/" className="font-bold text-2xl font-headline">
               Eleanor Vance
             </Link>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Image src="/exp-logo.png" alt="eXp Realty Logo" width={70} height={25} />
+              <span>Brokered by eXp Realty</span>
+            </div>
           </div>
           
           <div className="text-sm text-muted-foreground self-center">

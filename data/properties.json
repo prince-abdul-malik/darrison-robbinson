@@ -8,7 +8,7 @@
     "bedrooms": 5,
     "bathrooms": 6,
     "sqft": 5200,
-    "imageUrl": "/property-2.png",
+    "imageUrl": "/property-2.jpg",
     "imageHint": "luxury oceanfront villa"
   },
   {
@@ -19,7 +19,7 @@
     "bedrooms": 4,
     "bathrooms": 5,
     "sqft": 6100,
-    "imageUrl": "/property-3.png",
+    "imageUrl": "/property-3.jpg",
     "imageHint": "modern architectural house"
   },
   {
@@ -30,7 +30,7 @@
     "bedrooms": 3,
     "bathrooms": 4,
     "sqft": 3500,
-    "imageUrl": "/property-4.png",
+    "imageUrl": "/property-4.jpg",
     "imageHint": "luxury penthouse interior"
   }
 ]

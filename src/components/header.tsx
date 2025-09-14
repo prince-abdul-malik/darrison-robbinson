@@ -10,8 +10,9 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/#listings", label: "Listings" },
+  { href: "/#resources", label: "Resources" },
+  { href: "/#neighborhoods", label: "Neighborhoods" },
   { href: "/#about", label: "About" },
-  { href: "/#testimonials", label: "Testimonials" },
 ];
 
 export function Header() {
@@ -68,7 +69,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn("hover:bg-transparent", isScrolled ? "text-foreground" : "text-white hover:text-white/80")}>
+              <Button variant="ghost" size="icon" className={cn("hover:bg-transparent", isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80")}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
