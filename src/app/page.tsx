@@ -50,9 +50,9 @@ export default async function HomePage() {
         
         <section id="home" className="relative h-screen -mt-20 flex items-center justify-center text-white"> 
             <Image 
-                src="/property-3.jpg"
-                alt="Luxurious modern home"
-                data-ai-hint="luxury modern home"
+                src="/property-4.jpg"
+                alt="Luxury penthouse with city views"
+                data-ai-hint="luxury penthouse interior"
                 fill
                 className="object-cover"
                 priority
