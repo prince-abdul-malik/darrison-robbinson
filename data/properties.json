@@ -2,35 +2,35 @@
 [
   {
     "id": 1,
-    "title": "Beachside Cottage",
-    "price": "450000",
-    "address": "123 Ocean Blvd, Fort Walton Beach, FL",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "sqft": 1800,
-    "imageUrl": "/property-2.jpg",
-    "imageHint": "beach cottage"
+    "title": "Oceanfront Villa",
+    "price": "3250000",
+    "address": "456 Ocean Drive, Miami Beach, FL",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "sqft": 5200,
+    "imageUrl": "/property-2.png",
+    "imageHint": "luxury oceanfront villa"
   },
   {
     "id": 2,
-    "title": "Modern Downtown Condo",
-    "price": "320000",
-    "address": "456 Main St, Fort Walton Beach, FL",
-    "bedrooms": 2,
-    "bathrooms": 2,
-    "sqft": 1200,
-    "imageUrl": "/property-3.jpg",
-    "imageHint": "modern condo"
+    "title": "Modern Architectural Masterpiece",
+    "price": "4500000",
+    "address": "123 Hillside Rd, Beverly Hills, CA",
+    "bedrooms": 4,
+    "bathrooms": 5,
+    "sqft": 6100,
+    "imageUrl": "/property-3.png",
+    "imageHint": "modern architectural house"
   },
   {
     "id": 3,
-    "title": "Spacious Family Home",
-    "price": "580000",
-    "address": "789 Suburbia Ln, Fort Walton Beach, FL",
-    "bedrooms": 4,
-    "bathrooms": 3,
-    "sqft": 2500,
-    "imageUrl": "/property-4.jpg",
-    "imageHint": "suburban house"
+    "title": "Penthouse with City Views",
+    "price": "5800000",
+    "address": "789 High-Rise Ave, New York, NY",
+    "bedrooms": 3,
+    "bathrooms": 4,
+    "sqft": 3500,
+    "imageUrl": "/property-4.png",
+    "imageHint": "luxury penthouse interior"
   }
 ]

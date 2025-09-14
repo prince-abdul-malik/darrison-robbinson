@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -6,16 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Home } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/#about", label: "About" },
   { href: "/#listings", label: "Listings" },
+  { href: "/#about", label: "About" },
   { href: "/#testimonials", label: "Testimonials" },
-  { href: "/#neighborhoods", label: "Neighborhoods" },
-  { href: "/#resources", label: "Resources" },
-  { href: "/#market-updates", label: "Updates" },
 ];
 
 export function Header() {
@@ -25,7 +21,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -39,10 +35,9 @@ export function Header() {
           href={link.href}
           onClick={() => isMobile && setMobileMenuOpen(false)}
           className={cn(
-            "text-sm font-medium transition-colors",
-            isScrolled ? "text-foreground/80 hover:text-primary" : "text-white/80 hover:text-white",
-            (pathname === link.href || (link.href.startsWith('/#') && pathname === '/')) && (isScrolled ? "text-primary" : "text-white"),
-            isMobile && "block py-2 text-lg !text-foreground/80"
+            "text-sm font-medium transition-colors hover:text-primary",
+            isScrolled || isMobile ? "text-foreground" : "text-white",
+            isMobile && "block py-2 text-lg"
           )}
         >
           {link.label}
@@ -55,50 +50,38 @@ export function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "bg-background/95 shadow-md backdrop-blur-sm" : "bg-transparent"
+        isScrolled ? "bg-background/95 shadow-sm backdrop-blur-sm" : "bg-transparent"
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-6 md:px-10">
-        <Link href="/" className="flex items-center gap-3 font-bold text-lg font-headline">
-          <div className={cn("rounded-full p-2 transition-colors", isScrolled ? "bg-primary" : "bg-white/90")}>
-            <Home className={cn("h-6 w-6 transition-colors", isScrolled ? "text-primary-foreground" : "text-primary")} />
-          </div>
-          <div className={cn(isScrolled ? "text-foreground" : "text-white")}>
-            <span className="block text-xl">Jane Doe</span>
-            <span className="block text-xs font-body font-medium tracking-widest uppercase">Your Trusted Realtor</span>
-          </div>
+        <Link href="/" className={cn("font-bold text-2xl font-headline transition-colors", isScrolled ? "text-foreground" : "text-white")}>
+          Eleanor Vance
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           <NavLinkItems />
-           <Button asChild>
-            <Link href="/#contact">Contact Agent</Link>
+           <Button asChild variant={isScrolled ? "default" : "outline"} className={cn(!isScrolled && "text-white border-white hover:bg-white hover:text-black")}>
+            <Link href="/#contact">Contact</Link>
           </Button>
         </nav>
 
         <div className="md:hidden">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(isScrolled ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white")}>
+              <Button variant="ghost" size="icon" className={cn("hover:bg-transparent", isScrolled ? "text-foreground" : "text-white hover:text-white/80")}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-background">
               <div className="p-6">
-                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="mb-8 flex items-center gap-3 font-bold text-lg font-headline">
-                   <div className="bg-primary rounded-full p-2">
-                        <Home className="h-6 w-6 text-primary-foreground" />
-                   </div>
-                   <div>
-                        <span className="block text-xl">Jane Doe</span>
-                        <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR TRUSTED REALTOR</span>
-                    </div>
+                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="mb-8 block font-bold text-2xl font-headline text-foreground">
+                   Eleanor Vance
                 </Link>
                 <nav className="flex flex-col gap-4">
                   <NavLinkItems isMobile />
                   <Button asChild className="mt-4">
-                    <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>Contact Agent</Link>
+                    <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
                   </Button>
                 </nav>
               </div>

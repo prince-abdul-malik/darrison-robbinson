@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Home, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const ZillowIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em" {...props}><path d="M16.48.615a1.63 1.63 0 0 0-2.256.448l-7.73 10.453a.683.683 0 0 0 .584 1.04h4.417l-3.35 9.223a.681.681 0 0 0 .633.92.69.69 0 0 0 .6-.29l7.73-10.453a.683.683 0 0 0-.584-1.04H14.12l3.35-9.222a.681.681 0 0 0-.29-.681.703.703 0 0 0-.7-.014Z" /></svg>
@@ -13,18 +13,19 @@ export function Footer() {
   return (
     <footer className="bg-secondary/50 border-t">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <Link href="/" className="flex items-center gap-3 font-bold text-lg font-headline">
-            <Home className="h-7 w-7 text-primary" />
-            <div>
-              <span className="block text-xl">Jane Doe</span>
-              <span className="block text-xs text-muted-foreground font-body font-medium tracking-widest">YOUR TRUSTED REALTOR</span>
-            </div>
-          </Link>
-          <p className="text-sm text-muted-foreground text-center md:text-left">
-            © {new Date().getFullYear()} Jane Doe Realty. All Rights Reserved.
-          </p>
-          <div className="flex items-center gap-4">
+        <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+          <div className="flex justify-center md:justify-start">
+            <Link href="/" className="font-bold text-2xl font-headline">
+              Eleanor Vance
+            </Link>
+          </div>
+          
+          <div className="text-sm text-muted-foreground self-center">
+            <p>&copy; {new Date().getFullYear()} Eleanor Vance Realty. All Rights Reserved.</p>
+            <p>A Luxury Presence Inspired Theme</p>
+          </div>
+
+          <div className="flex items-center justify-center md:justify-end gap-5">
             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Facebook className="h-5 w-5" />
             </Link>
@@ -49,5 +50,3 @@ export function Footer() {
     </footer>
   );
 }
-
-    
