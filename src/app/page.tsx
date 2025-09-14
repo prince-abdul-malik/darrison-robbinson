@@ -29,9 +29,9 @@ const testimonials = [
 ];
 
 const neighborhoods = [
-    { name: "Downtown", image: "/neighborhood-1.jpg", hint: "city downtown street" },
-    { name: "South Beach", image: "/neighborhood-2.jpg", hint: "beachfront condo" },
-    { name: "Coral Gables", image: "/neighborhood-3.jpg", hint: "suburban houses" },
+    { name: "Downtown", image: "https://picsum.photos/seed/downtown/600/800", hint: "city downtown street" },
+    { name: "South Beach", image: "https://picsum.photos/seed/southbeach/600/800", hint: "beachfront condo" },
+    { name: "Coral Gables", image: "https://picsum.photos/seed/coralgables/600/800", hint: "suburban houses" },
 ];
 
 const marketUpdates = [

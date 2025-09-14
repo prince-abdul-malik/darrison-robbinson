@@ -27,7 +27,6 @@ export function Footer() {
           
           <div className="text-sm text-muted-foreground self-center">
             <p>&copy; {new Date().getFullYear()} Eleanor Vance Realty. All Rights Reserved.</p>
-            <p>A Luxury Presence Inspired Theme</p>
           </div>
 
           <div className="flex items-center justify-center md:justify-end gap-5">
