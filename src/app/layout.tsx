@@ -6,8 +6,8 @@ import { Nunito_Sans } from 'next/font/google';
 const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-nunito-sans' });
 
 export const metadata: Metadata = {
-  title: 'Samantha Reyes - Austin Realtor',
-  description: 'Helping first-time homebuyers and young families find their perfect starter home in Austin, TX.',
+  title: 'Samantha Reyes - Austin Realtor for First-Time Homebuyers',
+  description: 'As a former teacher, Samantha Reyes specializes in helping first-time homebuyers and young families find their perfect starter home in Austin, TX. Your friendly guide to Austin real estate.',
 };
 
 export default function RootLayout({

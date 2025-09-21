@@ -4,11 +4,33 @@ import { getPropertyById } from "@/lib/properties";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { BedDouble, Bath, Square, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
+import { type Metadata } from "next";
+
+type Props = {
+  params: { id: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const propertyId = parseInt(params.id, 10);
+  const property = await getPropertyById(propertyId);
+
+  if (!property) {
+    return {
+      title: "Property Not Found",
+      description: "The property you are looking for does not exist.",
+    };
+  }
+
+  return {
+    title: `${property.title} | Samantha Reyes`,
+    description: `View details for ${property.title}, a beautiful starter home in Austin, TX. ${property.bedrooms} beds, ${property.bathrooms} baths. Contact Samantha Reyes for a showing.`,
+    openGraph: {
+      images: [property.imageUrl],
+    },
+  };
+}
 
 export default async function PropertyDetailsPage({ params }: { params: { id: string } }) {
   const propertyId = parseInt(params.id, 10);
@@ -39,7 +61,7 @@ export default async function PropertyDetailsPage({ params }: { params: { id: st
           <div className="relative w-full h-[65vh] rounded-lg overflow-hidden shadow-2xl mb-12">
             <Image
                 src={property.imageUrl}
-                alt={property.title}
+                alt={`Exterior view of ${property.title}`}
                 data-ai-hint={property.imageHint}
                 fill
                 className="object-cover"

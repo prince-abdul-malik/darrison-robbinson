@@ -4,12 +4,10 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { PropertyCard } from "@/components/property-card";
 import { ContactForm } from "@/components/contact-form";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getProperties, Property } from "@/lib/properties";
 import { ArrowRight, Star, Home, Heart, BookOpen, Search } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { PropertySearchForm } from "@/components/property-search-form";
 
 const testimonials = [
     {
@@ -29,25 +27,52 @@ const testimonials = [
     }
 ];
 
-const schoolDistricts = [
-    { name: "Austin ISD", image: "https://picsum.photos/seed/austinisd/600/400", hint: "modern school building" },
-    { name: "Eanes ISD", image: "https://picsum.photos/seed/eanesisd/600/400", hint: "suburban school exterior" },
-    { name: "Leander ISD", image: "https://picsum.photos/seed/leanderisd/600/400", hint: "elementary school playground" },
-];
-
-
 export default async function HomePage() {
   const featuredProperties = await getProperties();
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Samantha Reyes",
+    "url": "https://yourwebsite.com", // Replace with actual domain
+    "logo": "https://yourwebsite.com/kw-logo.png", // Replace with actual domain
+    "image": "https://picsum.photos/seed/realtor/600/700",
+    "description": "A former elementary school teacher helping first-time homebuyers and young families find their perfect starter home in Austin, TX.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-512-555-0152",
+    "email": "samantha.reyes@kw.com",
+    "knowsAbout": ["Real Estate", "First-Time Home Buyers", "Family Homes"],
+    "areaServed": {
+      "@type": "City",
+      "name": "Austin"
+    },
+    "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+            "@type": "Service",
+            "name": "Real Estate Services for Buyers and Sellers"
+        }
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
+       <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       <Header />
       <main className="flex-grow">
         
         <section id="home" className="relative h-[85vh] -mt-20 flex items-center justify-center text-white"> 
             <Image 
                 src="https://picsum.photos/seed/familyhome/1800/1200"
-                alt="Happy family with keys to their new home"
+                alt="Happy family celebrating in front of their new Austin starter home"
                 data-ai-hint="happy family new home"
                 fill
                 className="object-cover"
@@ -65,24 +90,12 @@ export default async function HomePage() {
             </div>
         </section>
 
-        <section id="search" className="py-16 bg-white -mt-24 relative z-30 mx-4 md:mx-auto max-w-6xl rounded-lg shadow-2xl">
-            <div className="container mx-auto px-6 md:px-10">
-                <div className="text-center max-w-3xl mx-auto mb-8">
-                    <h2 className="text-3xl md:text-4xl font-headline font-bold mb-2">Begin Your Home Search</h2>
-                    <p className="text-lg text-muted-foreground">
-                        Use the tools below to explore homes in your favorite Austin neighborhoods.
-                    </p>
-                </div>
-                <PropertySearchForm />
-            </div>
-        </section>
-
         <section id="listings" className="py-20 md:py-24 bg-secondary/30">
           <div className="container mx-auto px-6 md:px-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Featured Starter Homes</h2>
               <p className="text-lg text-muted-foreground">
-                  A few hand-picked homes perfect for first-time buyers and growing families.
+                  A few hand-picked homes perfect for first-time buyers and growing families in Austin.
               </p>
             </div>
             {featuredProperties.length > 0 ? (
@@ -113,7 +126,7 @@ export default async function HomePage() {
                 <div className="flex justify-center">
                     <Image
                         src="https://picsum.photos/seed/realtor/600/700"
-                        alt="Samantha Reyes, Austin Realtor"
+                        alt="Samantha Reyes, a friendly Austin Realtor specializing in helping young families."
                         data-ai-hint="friendly female realtor"
                         width={500}
                         height={650}
