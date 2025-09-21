@@ -2,35 +2,35 @@
 [
   {
     "id": 1,
-    "title": "Oceanfront Villa",
-    "price": "3250000",
-    "address": "456 Ocean Drive, Miami Beach, FL",
-    "bedrooms": 5,
-    "bathrooms": 6,
-    "sqft": 5200,
-    "imageUrl": "/property-2.jpg",
-    "imageHint": "luxury oceanfront villa"
+    "title": "Charming East Austin Bungalow",
+    "price": "525000",
+    "address": "1234 Rosewood Ave, Austin, TX",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "sqft": 1450,
+    "imageUrl": "https://picsum.photos/seed/starter1/600/400",
+    "imageHint": "charming bungalow exterior"
   },
   {
     "id": 2,
-    "title": "Modern Architectural Masterpiece",
-    "price": "4500000",
-    "address": "123 Hillside Rd, Beverly Hills, CA",
+    "title": "Family Home in Circle C",
+    "price": "780000",
+    "address": "5678 Escarpment Blvd, Austin, TX",
     "bedrooms": 4,
-    "bathrooms": 5,
-    "sqft": 6100,
-    "imageUrl": "/property-3.jpg",
-    "imageHint": "modern architectural house"
+    "bathrooms": 3,
+    "sqft": 2600,
+    "imageUrl": "https://picsum.photos/seed/starter2/600/400",
+    "imageHint": "suburban family house"
   },
   {
     "id": 3,
-    "title": "Penthouse with City Views",
-    "price": "5800000",
-    "address": "789 High-Rise Ave, New York, NY",
+    "title": "Updated North Loop Gem",
+    "price": "615000",
+    "address": "9101 North Lamar, Austin, TX",
     "bedrooms": 3,
-    "bathrooms": 4,
-    "sqft": 3500,
-    "imageUrl": "/property-4.jpg",
-    "imageHint": "luxury penthouse interior"
+    "bathrooms": 2,
+    "sqft": 1600,
+    "imageUrl": "https://picsum.photos/seed/starter3/600/400",
+    "imageHint": "modern renovated house"
   }
 ]

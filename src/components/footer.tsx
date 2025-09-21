@@ -12,29 +12,26 @@ const RealtorIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export function Footer() {
   return (
-    <footer className="bg-secondary/50 border-t">
+    <footer className="bg-secondary/30 border-t">
       <div className="container mx-auto px-4 py-8">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           <div className="flex flex-col items-center md:items-start gap-4">
             <Link href="/" className="font-bold text-2xl font-headline">
-              Eleanor Vance
+              Samantha Reyes
             </Link>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Image src="/exp-logo.png" alt="eXp Realty Logo" width={70} height={25} />
-              <span>Brokered by eXp Realty</span>
+              <Image src="/kw-logo.png" alt="Keller Williams Logo" width={30} height={30} />
+              <span>Brokered by Keller Williams Realty</span>
             </div>
           </div>
           
           <div className="text-sm text-muted-foreground self-center">
-            <p>&copy; {new Date().getFullYear()} Eleanor Vance. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Samantha Reyes. All Rights Reserved.</p>
           </div>
 
           <div className="flex items-center justify-center md:justify-end gap-5">
             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Facebook className="h-5 w-5" />
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter className="h-5 w-5" />
             </Link>
             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
               <Instagram className="h-5 w-5" />

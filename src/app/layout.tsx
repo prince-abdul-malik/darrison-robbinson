@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { Inter } from 'next/font/google';
+import { Nunito_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-nunito-sans' });
 
 export const metadata: Metadata = {
-  title: 'Eleanor Vance - Luxury Real Estate',
-  description: 'Eleanor Vance specializes in luxury properties in the most desirable neighborhoods.',
+  title: 'Samantha Reyes - Austin Realtor',
+  description: 'Helping first-time homebuyers and young families find their perfect starter home in Austin, TX.',
 };
 
 export default function RootLayout({
@@ -20,9 +20,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.variable} font-body antialiased`}>
+      <body className={`${nunitoSans.variable} font-body antialiased`}>
         {children}
         <Toaster />
       </body>

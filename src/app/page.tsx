@@ -4,41 +4,37 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { PropertyCard } from "@/components/property-card";
 import { ContactForm } from "@/components/contact-form";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getProperties, Property } from "@/lib/properties";
-import { ArrowRight, Star, MapPin, Building, Home, TrendingUp, Compass } from "lucide-react";
+import { ArrowRight, Star, Home, Heart, BookOpen, Search } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { PropertySearchForm } from "@/components/property-search-form";
 
 const testimonials = [
     {
-        quote: "Eleanor's expertise in the luxury market is unmatched. She found us our dream home and navigated the complex negotiation process with incredible skill and grace. We are forever grateful.",
-        name: "The Vanderbilt Family",
+        quote: "Samantha made our first home buying experience so easy and stress-free! As a former teacher, she was amazing at explaining everything and helping us find a home in a great school district.",
+        name: "The Garcia Family",
         rating: 5,
     },
     {
-        quote: "Working with Eleanor was an absolute pleasure. Her professionalism, attention to detail, and deep understanding of our needs made the selling process seamless and highly profitable.",
-        name: "Alexandra Sterling",
+        quote: "We couldn't have asked for a better realtor. Samantha was patient, knowledgeable, and genuinely cared about finding the right fit for our family. Highly recommend!",
+        name: "David & Emily Chen",
         rating: 5,
     },
     {
-        quote: "As international buyers, we needed an agent we could trust implicitly. Eleanor exceeded all our expectations, providing unparalleled service and guidance. She is simply the best.",
-        name: "Mr. & Mrs. Dubois",
+        quote: "From our initial meeting to closing day, Samantha was a true professional. Her expertise on Austin neighborhoods and the market was invaluable. Thank you for everything!",
+        name: "Michael Johnson",
         rating: 5,
     }
 ];
 
-const neighborhoods = [
-    { name: "Downtown", image: "https://picsum.photos/seed/downtown/600/800", hint: "city downtown street" },
-    { name: "South Beach", image: "https://picsum.photos/seed/southbeach/600/800", hint: "beachfront condo" },
-    { name: "Coral Gables", image: "https://picsum.photos/seed/coralgables/600/800", hint: "suburban houses" },
+const schoolDistricts = [
+    { name: "Austin ISD", image: "https://picsum.photos/seed/austinisd/600/400", hint: "modern school building" },
+    { name: "Eanes ISD", image: "https://picsum.photos/seed/eanesisd/600/400", hint: "suburban school exterior" },
+    { name: "Leander ISD", image: "https://picsum.photos/seed/leanderisd/600/400", hint: "elementary school playground" },
 ];
 
-const marketUpdates = [
-    { title: "Q2 2024 Market Report", date: "July 15, 2024", excerpt: "The luxury market has seen a significant shift in buyer demand..." },
-    { title: "The Rise of Smart Homes", date: "June 28, 2024", excerpt: "How technology is reshaping the definition of a luxury property..." },
-    { title: "Navigating a Seller's Market", date: "June 5, 2024", excerpt: "Strategies for maximizing your return in the current climate..." },
-]
 
 export default async function HomePage() {
   const featuredProperties = await getProperties();
@@ -48,34 +44,45 @@ export default async function HomePage() {
       <Header />
       <main className="flex-grow">
         
-        <section id="home" className="relative h-screen -mt-20 flex items-center justify-center text-white"> 
+        <section id="home" className="relative h-[85vh] -mt-20 flex items-center justify-center text-white"> 
             <Image 
-                src="/property-2.jpg"
-                alt="Luxury oceanfront villa"
-                data-ai-hint="luxury oceanfront villa"
+                src="https://picsum.photos/seed/familyhome/1800/1200"
+                alt="Happy family with keys to their new home"
+                data-ai-hint="happy family new home"
                 fill
                 className="object-cover"
                 priority
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
+            <div className="absolute inset-0 bg-black/40 z-10" />
             <div className="relative z-20 container mx-auto px-6 md:px-10 text-center flex flex-col items-center"> 
-                <h1 className="text-4xl md:text-7xl font-headline font-bold text-white shadow-lg leading-tight mb-4">Eleanor Vance</h1>
+                <h1 className="text-4xl md:text-6xl font-headline font-black text-white shadow-lg leading-tight mb-4">Samantha Reyes</h1>
                 <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8">
-                    Your Trusted Partner in Luxury Real Estate
+                    Your friendly guide to finding a home in Austin.
                 </p>
-                <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-black">
-                    <Link href="/#contact">Schedule a Consultation</Link>
+                <Button asChild size="lg">
+                    <Link href="/#contact">Let's Find Your Home</Link>
                 </Button>
             </div>
         </section>
 
-        <section id="listings" className="py-20 md:py-32 bg-secondary/50">
+        <section id="search" className="py-16 bg-white -mt-24 relative z-30 mx-4 md:mx-auto max-w-6xl rounded-lg shadow-2xl">
+            <div className="container mx-auto px-6 md:px-10">
+                <div className="text-center max-w-3xl mx-auto mb-8">
+                    <h2 className="text-3xl md:text-4xl font-headline font-bold mb-2">Begin Your Home Search</h2>
+                    <p className="text-lg text-muted-foreground">
+                        Use the tools below to explore homes in your favorite Austin neighborhoods.
+                    </p>
+                </div>
+                <PropertySearchForm />
+            </div>
+        </section>
+
+        <section id="listings" className="py-20 md:py-24 bg-secondary/30">
           <div className="container mx-auto px-6 md:px-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-4xl md:text-5xl font-headline font-bold mb-4">Featured Listings</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Featured Starter Homes</h2>
               <p className="text-lg text-muted-foreground">
-                  A curated selection of premier properties. Explore more of my exclusive listings on Zillow.
+                  A few hand-picked homes perfect for first-time buyers and growing families.
               </p>
             </div>
             {featuredProperties.length > 0 ? (
@@ -86,13 +93,13 @@ export default async function HomePage() {
                 </div>
              ) : (
                 <div className="text-center text-muted-foreground">
-                    <p>New exclusive listings coming soon.</p>
+                    <p>New listings coming soon. Check back shortly!</p>
                 </div>
             )}
              <div className="text-center mt-16">
                 <Button asChild size="lg" variant="outline">
                     <Link href="#" target="_blank" rel="noopener noreferrer">
-                        View All Listings on Zillow
+                        View All My Listings
                         <ArrowRight className="ml-2"/>
                     </Link>
                 </Button>
@@ -100,123 +107,85 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section id="about" className="py-20 md:py-32">
+        <section id="about" className="py-20 md:py-24">
           <div className="container mx-auto px-6 md:px-10">
             <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-              <div className="flex justify-center">
+                <div className="flex justify-center">
                     <Image
-                        src="/agent-full-photo.jpg"
-                        alt="Eleanor Vance"
-                        data-ai-hint="professional realtor portrait"
+                        src="https://picsum.photos/seed/realtor/600/700"
+                        alt="Samantha Reyes, Austin Realtor"
+                        data-ai-hint="friendly female realtor"
                         width={500}
                         height={650}
-                        className="rounded-sm shadow-2xl object-cover"
+                        className="rounded-lg shadow-xl object-cover"
                     />
                 </div>
-              <div>
-                <h2 className="text-4xl md:text-5xl font-headline font-bold mb-6">Eleanor Vance</h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  With over a decade of experience in the high-end real estate market, Eleanor Vance has built a reputation for her unwavering commitment to her clients' success. Her deep market knowledge and sharp negotiation skills are matched only by her dedication to providing a seamless, white-glove service experience.
-                </p>
-                <p className="mb-8 text-muted-foreground leading-relaxed">
-                  Eleanor believes that luxury is not just a price point, but an experience. She specializes in connecting discerning buyers with exceptional properties that reflect their lifestyle and aspirations.
-                </p>
-                <Button asChild size="lg" variant="default">
-                    <Link href="#contact">
-                       Get In Touch
-                    </Link>
-                </Button>
-              </div>
+                <div>
+                    <h2 className="text-3xl md:text-4xl font-headline font-bold mb-6">Hi, I'm Samantha!</h2>
+                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                     As a former elementary school teacher, I bring patience, dedication, and a love for education to my real estate career. My passion is helping first-time homebuyers and young families navigate the exciting journey of finding their perfect starter home in Austin.
+                    </p>
+                    <p className="mb-8 text-muted-foreground leading-relaxed">
+                     I believe a home is more than just a place to live—it's where your family's story begins. I'm here to listen to your needs, answer every question, and guide you with care and expertise. Let's make your homeownership dreams a reality!
+                    </p>
+                    <Button asChild size="lg">
+                        <Link href="#contact">
+                           Work With Me
+                        </Link>
+                    </Button>
+                </div>
             </div>
           </div>
         </section>
 
-        <section id="resources" className="py-20 md:py-32 bg-secondary/50">
-            <div className="container mx-auto px-6 md:px-10">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
-                    <div className="text-center md:text-left">
-                        <Home className="h-12 w-12 text-primary mx-auto md:mx-0 mb-4" />
-                        <h3 className="text-3xl font-headline font-bold mb-4">For Buyers</h3>
-                        <p className="text-muted-foreground mb-6">
-                            Receive a curated list of properties that match your exact criteria, from off-market gems to exclusive listings. I'll guide you through every step, ensuring a seamless and successful purchase.
-                        </p>
-                        <Button variant="link" className="p-0 h-auto text-base">
-                            Download My Buyer's Guide <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                    </div>
-                    <div className="text-center md:text-left">
-                        <Building className="h-12 w-12 text-primary mx-auto md:mx-0 mb-4" />
-                        <h3 className="text-3xl font-headline font-bold mb-4">For Sellers</h3>
-                        <p className="text-muted-foreground mb-6">
-                            Leverage a bespoke marketing strategy and my extensive network to present your property to qualified buyers. My goal is to secure the highest possible price in the shortest amount of time.
-                        </p>
-                        <Button variant="link" className="p-0 h-auto text-base">
-                            Request a Home Valuation <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="neighborhoods" className="py-20 md:py-32">
+        <section id="resources" className="py-20 md:py-24 bg-secondary/30">
             <div className="container mx-auto px-6 md:px-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <Compass className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h2 className="text-4xl md:text-5xl font-headline font-bold mb-4">Neighborhood Guides</h2>
+                    <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
+                    <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Resources for Your Journey</h2>
                     <p className="text-lg text-muted-foreground">
-                        Discover the unique character and lifestyle of the most sought-after communities.
+                        Everything you need to get started, whether you're buying or selling.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {neighborhoods.map((item, index) => (
-                       <Link href="#" key={index} className="group block relative overflow-hidden rounded-lg shadow-lg">
-                           <Image src={item.image} alt={item.name} data-ai-hint={item.hint} width={600} height={800} className="object-cover w-full h-96 group-hover:scale-105 transition-transform duration-500" />
-                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                           <div className="absolute bottom-0 left-0 p-6 text-white">
-                               <h3 className="text-2xl font-headline font-bold">{item.name}</h3>
-                           </div>
-                       </Link>
-                    ))}
+                <div className="grid md:grid-cols-2 gap-8 items-stretch">
+                    <Card className="p-8 text-center shadow-lg border-none">
+                        <Home className="h-12 w-12 text-primary mx-auto mb-4" />
+                        <CardHeader>
+                            <CardTitle className="text-2xl font-headline font-bold">For First-Time Buyers</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground mb-6">
+                                Feeling overwhelmed? My step-by-step guide breaks down the entire process, from getting pre-approved to finding a home in the perfect school district.
+                            </p>
+                            <Button variant="link" className="p-0 h-auto text-base">
+                                Download My Buyer's Guide <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </CardContent>
+                    </Card>
+                    <Card className="p-8 text-center shadow-lg border-none">
+                        <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
+                         <CardHeader>
+                            <CardTitle className="text-2xl font-headline font-bold">Austin School Guides</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground mb-6">
+                                As a former teacher, I know how important schools are. Explore my detailed guides on Austin's top-rated school districts to find the right community for your family.
+                            </p>
+                             <Button variant="link" className="p-0 h-auto text-base">
+                                Explore School Districts <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
         </section>
 
-        <section id="market-updates" className="py-20 md:py-32 bg-secondary/50">
+        <section id="testimonials" className="py-20 md:py-24">
             <div className="container mx-auto px-6 md:px-10">
-                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h2 className="text-4xl md:text-5xl font-headline font-bold mb-4">Market Insights</h2>
-                    <p className="text-lg text-muted-foreground">
-                        Stay informed with the latest trends and analysis in the luxury real estate market.
-                    </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {marketUpdates.map((item, index) => (
-                        <Card key={index} className="bg-card flex flex-col border-none shadow-xl">
-                            <CardHeader>
-                                <CardTitle className="text-xl font-headline">{item.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <p className="text-muted-foreground text-sm">{item.excerpt}</p>
-                            </CardContent>
-                            <CardFooter>
-                                 <Button variant="link" className="p-0 h-auto text-base">
-                                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                                </Button>
-                            </CardFooter>
-                        </Card>
-                    ))}
-                </div>
-            </div>
-        </section>
-
-
-         <section id="testimonials" className="py-20 md:py-32">
-            <div className="container mx-auto px-6 md:px-10">
-                <h2 className="text-4xl md:text-5xl font-headline font-bold text-center mb-16">Client Testimonials</h2>
+                <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-16">What My Clients Say</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-card flex flex-col border-none shadow-xl">
+                        <Card key={index} className="bg-secondary/30 flex flex-col border-none shadow-lg">
                             <CardContent className="p-8 flex-grow">
                                 <div className="flex items-center mb-4">
                                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -234,12 +203,12 @@ export default async function HomePage() {
             </div>
         </section>
         
-        <section id="contact" className="py-20 md:py-32 bg-secondary/50">
+        <section id="contact" className="py-20 md:py-24 bg-secondary/30">
           <div className="container mx-auto px-6 md:px-10">
              <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-headline font-bold mb-4">Begin Your Journey</h2>
+                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Ready to Start Your Search?</h2>
                 <p className="text-lg text-muted-foreground mb-12">
-                  Whether you are buying or selling a premier property, contact Eleanor to schedule a private consultation.
+                  I'd love to hear about your homeownership goals. Send me a message to schedule a free, no-pressure chat!
                 </p>
              </div>
             <div className="max-w-xl mx-auto">
@@ -248,8 +217,8 @@ export default async function HomePage() {
               </Card>
             </div>
              <div className="text-center mt-16 text-muted-foreground">
-                  <p className="mb-2"><strong>Email:</strong> eleanor.vance@luxerealty.com</p>
-                  <p><strong>Phone:</strong> (310) 555-0102</p>
+                  <p className="mb-2"><strong>Email:</strong> samantha.reyes@kw.com</p>
+                  <p><strong>Phone:</strong> (512) 555-0152</p>
             </div>
           </div>
         </section>

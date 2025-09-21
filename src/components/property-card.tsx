@@ -11,8 +11,8 @@ interface PropertyCardProps {
 
 export function PropertyCard({ property }: PropertyCardProps) {
   return (
-    <Link href={`/properties/${property.id}`} className="group block">
-        <Card className="w-full h-full flex flex-col overflow-hidden shadow-none border-none bg-transparent rounded-none transition-shadow duration-300">
+    <Link href={`/properties/${property.id}`} className="group block h-full">
+        <Card className="w-full h-full flex flex-col overflow-hidden shadow-lg border-none bg-card rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
             <CardHeader className="p-0 relative overflow-hidden">
             <Image
                 src={property.imageUrl}
@@ -20,35 +20,28 @@ export function PropertyCard({ property }: PropertyCardProps) {
                 data-ai-hint={property.imageHint}
                 width={600}
                 height={400}
-                className="object-cover w-full h-64 group-hover:scale-105 transition-transform duration-500"
+                className="object-cover w-full h-56"
             />
             </CardHeader>
-            <CardContent className="p-0 pt-4 flex-grow">
-            <CardTitle className="text-xl font-headline mb-2">{property.title}</CardTitle>
-            <div className="flex items-center text-sm text-muted-foreground space-x-4">
-                <div className="flex items-center gap-1.5 font-medium">
-                    <BedDouble size={16} />
-                    <span>{property.bedrooms} Beds</span>
-                </div>
-                <div className="flex items-center gap-1.5 font-medium">
-                    <Bath size={16} />
-                    <span>{property.bathrooms} Baths</span>
-                </div>
-                <div className="flex items-center gap-1.5 font-medium">
-                    <Square size={16} />
-                    <span>{property.sqft.toLocaleString()} sqft</span>
-                </div>
-            </div>
-            
+            <CardContent className="p-6 flex-grow">
+                <p className="text-lg font-bold text-primary mb-2">${Number(property.price).toLocaleString()}</p>
+                <CardTitle className="text-xl font-headline font-bold mb-2">{property.title}</CardTitle>
+                <CardDescription className="text-sm text-muted-foreground">{property.address}</CardDescription>
             </CardContent>
-            <CardFooter className="p-0 pt-4 mt-auto">
-                <div className="flex justify-between items-center w-full">
-                    <p className="text-lg font-bold text-foreground">${Number(property.price).toLocaleString()}</p>
-                    <Button variant="ghost" size="icon" asChild>
-                        <span className="h-auto p-0">
-                            View Property <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                        </span>
-                    </Button>
+            <CardFooter className="p-6 pt-0 mt-auto bg-secondary/30">
+                <div className="flex items-center text-sm text-muted-foreground space-x-4 w-full">
+                    <div className="flex items-center gap-1.5 font-medium">
+                        <BedDouble size={16} />
+                        <span>{property.bedrooms} Beds</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 font-medium">
+                        <Bath size={16} />
+                        <span>{property.bathrooms} Baths</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 font-medium">
+                        <Square size={16} />
+                        <span>{property.sqft.toLocaleString()} sqft</span>
+                    </div>
                 </div>
             </CardFooter>
         </Card>
