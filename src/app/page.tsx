@@ -1,241 +1,243 @@
-import Image from "next/image";
-import Link from "next/link";
+
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { PropertyCard } from "@/components/property-card";
-import { ContactForm } from "@/components/contact-form";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { getProperties, Property } from "@/lib/properties";
-import { ArrowRight, Star, Home, Heart, BookOpen, Search } from "lucide-react";
+import { getProperties } from "@/lib/properties";
+import { PropertyCard } from "@/components/property-card";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, BookOpen, HomeIcon, MessageSquare, Star } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { type Metadata } from 'next';
 
-const testimonials = [
+export const metadata: Metadata = {
+  title: 'Samantha Reyes - Austin Realtor for First-Time Homebuyers',
+  description: 'As a former teacher, Samantha Reyes specializes in helping first-time homebuyers and young families find their perfect starter home in Austin, TX. Your friendly guide to Austin real estate.',
+};
+
+
+export default async function Home() {
+  const properties = await getProperties();
+
+  const resources = [
     {
-        quote: "Samantha made our first home buying experience so easy and stress-free! As a former teacher, she was amazing at explaining everything and helping us find a home in a great school district.",
-        name: "The Garcia Family",
-        rating: 5,
+      icon: <HomeIcon className="h-10 w-10 text-primary" />,
+      title: "First-Time Home Buyer's Guide",
+      description: "Everything you need to know, from getting pre-approved to closing day.",
     },
     {
-        quote: "We couldn't have asked for a better realtor. Samantha was patient, knowledgeable, and genuinely cared about finding the right fit for our family. Highly recommend!",
-        name: "David & Emily Chen",
-        rating: 5,
+      icon: <BookOpen className="h-10 w-10 text-primary" />,
+      title: "Understanding Austin's School Districts",
+      description: "As a former teacher, I can help you find a great home in a top-rated school zone.",
     },
     {
-        quote: "From our initial meeting to closing day, Samantha was a true professional. Her expertise on Austin neighborhoods and the market was invaluable. Thank you for everything!",
-        name: "Michael Johnson",
-        rating: 5,
+      icon: <Star className="h-10 w-10 text-primary" />,
+      title: "Navigating the Loan Process",
+      description: "Learn about different loan types and find the best financing options for your family.",
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "How much do I need for a down payment?",
+      answer: "Many first-time buyers are surprised to learn they don't need 20%! There are programs that allow for as little as 3-5% down. We can explore the best options for your budget."
+    },
+    {
+      question: "How long does it take to buy a home?",
+      answer: "On average, it can take anywhere from 30 to 60 days from the time you make an offer to the day you get the keys. This can vary based on financing and negotiations."
+    },
+    {
+        question: "What are the most important things to look for in a starter home?",
+        answer: "For a starter home, I recommend focusing on location, a solid structure, and potential for equity growth. Things like updated kitchens are wonderful, but the 'bones' of the house and the neighborhood are most important for your family's future."
+    },
+    {
+        question: "How does your background as a teacher help me?",
+        answer: "My teaching experience taught me patience, clear communication, and how to break down complex processes into simple steps. I excel at educating my clients, especially first-time buyers, so you feel confident and informed throughout the entire journey. I'm also very familiar with Austin's school districts!"
     }
-];
+  ]
 
-export default async function HomePage() {
-  const featuredProperties = await getProperties();
-
-  const structuredData = {
+    const structuredData = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Samantha Reyes",
     "url": "https://yourwebsite.com", // Replace with actual domain
-    "logo": "https://yourwebsite.com/kw-logo.png", // Replace with actual domain
-    "image": "https://picsum.photos/seed/realtor/600/700",
-    "description": "A former elementary school teacher helping first-time homebuyers and young families find their perfect starter home in Austin, TX.",
+    "logo": "https://yourwebsite.com/logo.png", // Replace with actual logo URL
+    "telephone": "+1-512-555-1234", // Replace with actual phone
+    "description": "Friendly Austin, TX realtor specializing in helping first-time homebuyers and young families find their perfect starter home.",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "123 Main St", // Replace with brokerage address
       "addressLocality": "Austin",
       "addressRegion": "TX",
+      "postalCode": "78701",
       "addressCountry": "US"
     },
-    "telephone": "+1-512-555-0152",
-    "email": "samantha.reyes@kw.com",
-    "knowsAbout": ["Real Estate", "First-Time Home Buyers", "Family Homes"],
     "areaServed": {
-      "@type": "City",
-      "name": "Austin"
+      "@type": "Place",
+      "name": "Austin, TX"
     },
     "makesOffer": {
         "@type": "Offer",
         "itemOffered": {
             "@type": "Service",
-            "name": "Real Estate Services for Buyers and Sellers"
+            "name": "Real Estate Agent Services for First-Time Homebuyers"
         }
     }
   };
 
+
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-       <script
+    <div className="flex flex-col min-h-screen bg-background">
+      <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       <Header />
+      
+      {/* Hero Section */}
+      <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white px-4">
+        <div className="absolute inset-0 bg-black/50 z-10" />
+        <Image 
+            src="/family-hero.jpg"
+            alt="Happy family holding keys in front of their new Austin starter home"
+            data-ai-hint="happy family new home"
+            fill
+            className="object-cover"
+            priority
+        />
+        <div className="relative z-20 flex flex-col items-center">
+            <h1 className="text-4xl md:text-6xl font-extrabold font-headline tracking-tight mb-4">
+                Your Journey to a First Home Starts Here.
+            </h1>
+            <p className="max-w-2xl text-lg md:text-xl mb-8">
+            I'm Samantha Reyes, an Austin realtor and former teacher dedicated to guiding young families and first-time buyers to their perfect starter home.
+            </p>
+            <Button asChild size="lg">
+            <Link href="#contact">Get Started Today <ArrowRight className="ml-2" /></Link>
+            </Button>
+        </div>
+      </section>
+
       <main className="flex-grow">
-        
-        <section id="home" className="relative h-[85vh] -mt-20 flex items-center justify-center text-white"> 
-            <Image 
-                src="https://picsum.photos/seed/familyhome/1800/1200"
-                alt="Happy family celebrating in front of their new Austin starter home"
-                data-ai-hint="happy family new home"
-                fill
-                className="object-cover"
-                priority
-            />
-            <div className="absolute inset-0 bg-black/40 z-10" />
-            <div className="relative z-20 container mx-auto px-6 md:px-10 text-center flex flex-col items-center"> 
-                <h1 className="text-4xl md:text-6xl font-headline font-black text-white shadow-lg leading-tight mb-4">Samantha Reyes</h1>
-                <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8">
-                    Your friendly guide to finding a home in Austin.
-                </p>
-                <Button asChild size="lg">
-                    <Link href="/#contact">Let's Find Your Home</Link>
-                </Button>
+        {/* About Section */}
+        <section id="about" className="bg-secondary/20">
+            <div className="container mx-auto px-6 md:px-10">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-xl">
+                        <Image 
+                            src="/samantha-reyes.jpg" 
+                            alt="Portrait of Samantha Reyes, friendly Austin realtor"
+                            data-ai-hint="friendly woman portrait"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Hi, I'm Samantha!</h2>
+                        <p className="text-muted-foreground leading-relaxed mb-4">
+                            Making the leap into homeownership is a huge step, and it can feel overwhelming. Before I was a realtor, I was an elementary school teacher. I learned that the best way to tackle big, new things is with a clear plan, a lot of patience, and a friendly guide you can trust.
+                        </p>
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                            That’s the approach I bring to real estate. I specialize in helping first-time homebuyers and young families in the Austin area turn their dreams of a starter home into a reality. I'm here to educate you, support you, and celebrate with you on closing day.
+                        </p>
+                        <Button asChild variant="outline">
+                            <Link href="#contact">Let's Chat!</Link>
+                        </Button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="listings" className="py-20 md:py-24 bg-secondary/30">
+        {/* Featured Listings Section */}
+        <section id="listings" className="bg-background">
           <div className="container mx-auto px-6 md:px-10">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Featured Starter Homes</h2>
-              <p className="text-lg text-muted-foreground">
-                  A few hand-picked homes perfect for first-time buyers and growing families in Austin.
+              <p className="text-muted-foreground">
+                Get a feel for the types of wonderful and affordable homes available right now in the Austin area.
               </p>
             </div>
-            {featuredProperties.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {featuredProperties.map((property) => (
-                       <PropertyCard key={property.id} property={property as Property} />
-                    ))}
-                </div>
-             ) : (
-                <div className="text-center text-muted-foreground">
-                    <p>New listings coming soon. Check back shortly!</p>
-                </div>
-            )}
-             <div className="text-center mt-16">
-                <Button asChild size="lg" variant="outline">
-                    <Link href="#" target="_blank" rel="noopener noreferrer">
-                        View All My Listings
-                        <ArrowRight className="ml-2"/>
-                    </Link>
-                </Button>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {properties.map((property) => (
+                <PropertyCard key={property.id} property={property} />
+              ))}
             </div>
           </div>
         </section>
 
-        <section id="about" className="py-20 md:py-24">
-          <div className="container mx-auto px-6 md:px-10">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-                <div className="flex justify-center">
-                    <Image
-                        src="https://picsum.photos/seed/realtor/600/700"
-                        alt="Samantha Reyes, a friendly Austin Realtor specializing in helping young families."
-                        data-ai-hint="friendly female realtor"
-                        width={500}
-                        height={650}
-                        className="rounded-lg shadow-xl object-cover"
-                    />
-                </div>
-                <div>
-                    <h2 className="text-3xl md:text-4xl font-headline font-bold mb-6">Hi, I'm Samantha!</h2>
-                    <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                     As a former elementary school teacher, I bring patience, dedication, and a love for education to my real estate career. My passion is helping first-time homebuyers and young families navigate the exciting journey of finding their perfect starter home in Austin.
-                    </p>
-                    <p className="mb-8 text-muted-foreground leading-relaxed">
-                     I believe a home is more than just a place to live—it's where your family's story begins. I'm here to listen to your needs, answer every question, and guide you with care and expertise. Let's make your homeownership dreams a reality!
-                    </p>
-                    <Button asChild size="lg">
-                        <Link href="#contact">
-                           Work With Me
-                        </Link>
-                    </Button>
-                </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="resources" className="py-20 md:py-24 bg-secondary/30">
+        {/* Resources Section */}
+        <section id="resources" className="bg-secondary/20">
             <div className="container mx-auto px-6 md:px-10">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
+                <div className="text-center max-w-2xl mx-auto mb-12">
                     <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Resources for Your Journey</h2>
-                    <p className="text-lg text-muted-foreground">
-                        Everything you need to get started, whether you're buying or selling.
+                    <p className="text-muted-foreground">
+                        Knowledge is power! Here are a few guides to help you get started on your homebuying adventure.
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-8 items-stretch">
-                    <Card className="p-8 text-center shadow-lg border-none">
-                        <Home className="h-12 w-12 text-primary mx-auto mb-4" />
-                        <CardHeader>
-                            <CardTitle className="text-2xl font-headline font-bold">For First-Time Buyers</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground mb-6">
-                                Feeling overwhelmed? My step-by-step guide breaks down the entire process, from getting pre-approved to finding a home in the perfect school district.
-                            </p>
-                            <Button variant="link" className="p-0 h-auto text-base">
-                                Download My Buyer's Guide <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                        </CardContent>
-                    </Card>
-                    <Card className="p-8 text-center shadow-lg border-none">
-                        <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
-                         <CardHeader>
-                            <CardTitle className="text-2xl font-headline font-bold">Austin School Guides</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground mb-6">
-                                As a former teacher, I know how important schools are. Explore my detailed guides on Austin's top-rated school districts to find the right community for your family.
-                            </p>
-                             <Button variant="link" className="p-0 h-auto text-base">
-                                Explore School Districts <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" className="py-20 md:py-24">
-            <div className="container mx-auto px-6 md:px-10">
-                <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-16">What My Clients Say</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-secondary/30 flex flex-col border-none shadow-lg">
-                            <CardContent className="p-8 flex-grow">
-                                <div className="flex items-center mb-4">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 text-primary fill-primary" />
-                                    ))}
-                                </div>
-                                <p className="text-muted-foreground italic text-base">"{testimonial.quote}"</p>
-                            </CardContent>
-                             <CardHeader className="p-8 pt-4 mt-auto">
-                                <p className="font-bold text-sm text-foreground">- {testimonial.name}</p>
-                            </CardHeader>
-                        </Card>
+                <div className="grid md:grid-cols-3 gap-8 text-center">
+                    {resources.map((resource) => (
+                        <div key={resource.title} className="bg-card p-8 rounded-lg shadow-sm flex flex-col items-center">
+                            {resource.icon}
+                            <h3 className="text-xl font-bold font-headline mt-4 mb-2">{resource.title}</h3>
+                            <p className="text-muted-foreground text-sm">{resource.description}</p>
+                        </div>
                     ))}
                 </div>
             </div>
         </section>
-        
-        <section id="contact" className="py-20 md:py-24 bg-secondary/30">
-          <div className="container mx-auto px-6 md:px-10">
-             <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Ready to Start Your Search?</h2>
-                <p className="text-lg text-muted-foreground mb-12">
-                  I'd love to hear about your homeownership goals. Send me a message to schedule a free, no-pressure chat!
-                </p>
+
+        {/* FAQ Section */}
+        <section id="faq" className="bg-background">
+             <div className="container mx-auto px-6 md:px-10">
+                <div className="grid md:grid-cols-2 gap-16 items-start">
+                    <div className="md:sticky top-28">
+                        <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Your Questions, Answered</h2>
+                        <p className="text-muted-foreground mb-6">
+                            Here are some of the most common questions I get from first-time homebuyers.
+                        </p>
+                        <Button asChild>
+                            <Link href="#contact">Have Another Question?</Link>
+                        </Button>
+                    </div>
+                    <Accordion type="single" collapsible className="w-full">
+                        {faqs.map((faq, index) => (
+                            <AccordionItem key={index} value={`item-${index + 1}`}>
+                                <AccordionTrigger className="text-left font-bold hover:no-underline">{faq.question}</AccordionTrigger>
+                                <AccordionContent className="text-muted-foreground">
+                                    {faq.answer}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
              </div>
-            <div className="max-w-xl mx-auto">
-              <Card className="p-8 sm:p-12 shadow-2xl bg-card border-none">
-                <ContactForm />
-              </Card>
+        </section>
+
+
+        {/* Contact Section */}
+        <section id="contact" className="bg-primary/5">
+          <div className="container mx-auto px-6 md:px-10">
+            <div className="max-w-2xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Let's Find Your First Home</h2>
+              <p className="text-muted-foreground">
+                Ready to take the next step? Fill out the form below, and I'll be in touch to schedule a free, no-obligation consultation to chat about your goals.
+              </p>
             </div>
-             <div className="text-center mt-16 text-muted-foreground">
-                  <p className="mb-2"><strong>Email:</strong> samantha.reyes@kw.com</p>
-                  <p><strong>Phone:</strong> (512) 555-0152</p>
+            <div className="max-w-2xl mx-auto">
+                <div className="bg-card p-8 rounded-xl shadow-lg">
+                    <ContactForm />
+                </div>
             </div>
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   );
