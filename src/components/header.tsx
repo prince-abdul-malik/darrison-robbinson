@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { href: "/#listings", label: "Listings" },
   { href: "/#resources", label: "Resources" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#market-updates", label: "Market Updates" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -67,9 +69,9 @@ export function Header() {
         Samantha Reyes
       </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           <NavLinkItems />
-           <Button asChild>
+           <Button asChild size="sm">
             <Link href="/#contact">Contact Me</Link>
           </Button>
         </nav>

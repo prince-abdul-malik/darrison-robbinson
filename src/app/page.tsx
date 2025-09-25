@@ -6,7 +6,7 @@ import { getProperties } from "@/lib/properties";
 import { PropertyCard } from "@/components/property-card";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, HomeIcon, MessageSquare, Star } from "lucide-react";
+import { ArrowRight, BookOpen, HomeIcon, MessageSquare, Star, CheckCircle, Heart, Users } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import {
   Accordion,
@@ -15,6 +15,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { type Metadata } from 'next';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: 'Samantha Reyes - Austin Realtor for First-Time Homebuyers',
@@ -61,6 +63,27 @@ export default async function Home() {
         answer: "My teaching experience taught me patience, clear communication, and how to break down complex processes into simple steps. I excel at educating my clients, especially first-time buyers, so you feel confident and informed throughout the entire journey. I'm also very familiar with Austin's school districts!"
     }
   ]
+  
+  const testimonials = [
+    {
+      quote: "As first-time homebuyers, we were so nervous, but Samantha made the entire process a breeze! Her teaching background really shines through. She was patient, educational, and truly listened to our needs. We found the perfect starter home for our family!",
+      author: "The Johnson Family",
+      avatar: "/avatar-1.jpg",
+      location: "First-time buyers in South Austin"
+    },
+    {
+      quote: "Samantha is a rockstar! She helped us navigate the competitive Austin market and found us a home in a great school district. We couldn't have done it without her guidance and expertise. Highly recommend!",
+      author: "Mark & Sarah P.",
+      avatar: "/avatar-2.jpg",
+      location: "Relocated to Round Rock"
+    },
+    {
+      quote: "I can't say enough good things about working with Samantha. She was organized, communicative, and always had our best interests at heart. If you're looking for a realtor who is both professional and incredibly kind, she's the one.",
+      author: "David Chen",
+      avatar: "/avatar-3.jpg",
+      location: "Bought a condo in The Domain"
+    }
+  ]
 
     const structuredData = {
     "@context": "https://schema.org",
@@ -68,6 +91,7 @@ export default async function Home() {
     "name": "Samantha Reyes",
     "url": "https://yourwebsite.com", // Replace with actual domain
     "logo": "https://yourwebsite.com/logo.png", // Replace with actual logo URL
+    "image": "/samantha.jpg",
     "telephone": "+1-512-555-1234", // Replace with actual phone
     "description": "Friendly Austin, TX realtor specializing in helping first-time homebuyers and young families find their perfect starter home.",
     "address": {
@@ -104,7 +128,7 @@ export default async function Home() {
       <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white px-4 -mt-20">
         <div className="absolute inset-0 bg-black/50 z-10" />
         <Image 
-            src="/people-5.jpg"
+            src="/family-hero.jpg"
             alt="Happy family holding keys in front of their new Austin starter home"
             data-ai-hint="happy family new home"
             fill
@@ -129,7 +153,7 @@ export default async function Home() {
         <section id="about" className="bg-secondary/20">
             <div className="container mx-auto px-6 md:px-10">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-xl">
+                    <div className="relative w-full h-[600px] rounded-lg overflow-hidden shadow-xl">
                         <Image 
                             src="/samantha.jpg" 
                             alt="Portrait of Samantha Reyes, friendly Austin realtor"
@@ -190,6 +214,63 @@ export default async function Home() {
                     ))}
                 </div>
             </div>
+        </section>
+        
+        {/* Testimonials Section */}
+        <section id="testimonials" className="bg-background">
+          <div className="container mx-auto px-6 md:px-10">
+            <div className="text-center max-w-2xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Words from Happy Homeowners</h2>
+              <p className="text-muted-foreground">
+                See what my clients have to say about their experience finding their dream starter home.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="flex flex-col justify-between border-none shadow-lg bg-card rounded-lg overflow-hidden">
+                    <CardContent className="p-8">
+                      <p className="text-muted-foreground italic mb-6">"{testimonial.quote}"</p>
+                      <div className="flex items-center gap-4">
+                        <Avatar>
+                          <AvatarImage src={testimonial.avatar} alt={testimonial.author} data-ai-hint="person photo" />
+                          <AvatarFallback>{testimonial.author.charAt(0)}</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-bold font-headline">{testimonial.author}</p>
+                          <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Market Update Section */}
+        <section id="market-updates" className="bg-secondary/20">
+          <div className="container mx-auto px-6 md:px-10">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Austin Market Update</h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Staying informed about the local real estate market is key to making a great investment. The Austin market is dynamic, with trends that can benefit savvy first-time buyers. Currently, we're seeing a stabilization in prices, offering new opportunities for entry-level homes. Interest rates are fluctuating, making it a crucial time to get pre-approved and lock in a rate. I provide my clients with bi-weekly breakdowns of what's happening in the neighborhoods that matter most to them.
+                </p>
+                <Button asChild>
+                  <Link href="#contact">Get My Hyper-Local Insights</Link>
+                </Button>
+              </div>
+              <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-xl">
+                <Image 
+                    src="/austin-downtown.jpg" 
+                    alt="Austin, TX downtown skyline"
+                    data-ai-hint="city skyline"
+                    fill
+                    className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* FAQ Section */}

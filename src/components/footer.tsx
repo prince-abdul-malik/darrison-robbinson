@@ -13,39 +13,56 @@ const RealtorIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export function Footer() {
   return (
     <footer className="bg-secondary/30 border-t">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <Link href="/" className="font-bold text-2xl font-headline">
-              Samantha Reyes
-            </Link>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Image src="/kw-logo.png" alt="Keller Williams Logo" width={30} height={30} />
-              <span>Brokered by Keller Williams Realty</span>
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-3 gap-8">
+            {/* Column 1: Brand & Broker */}
+            <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+                <Link href="/" className="font-bold text-2xl font-headline">
+                Samantha Reyes
+                </Link>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Image src="/kw-logo.png" alt="Keller Williams Logo" width={30} height={30} />
+                <span>Brokered by Keller Williams Realty</span>
+                </div>
+                 <div className="flex items-center justify-center md:justify-start gap-4 mt-2">
+                    <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Facebook className="h-5 w-5" />
+                    </Link>
+                    <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Instagram className="h-5 w-5" />
+                    </Link>
+                    <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <Linkedin className="h-5 w-5" />
+                    </Link>
+                    <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <ZillowIcon className="h-5 w-5" />
+                    </Link>
+                    <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                        <RealtorIcon className="h-6 w-6" />
+                    </Link>
+                </div>
             </div>
-          </div>
-          
-          <div className="text-sm text-muted-foreground self-center">
-            <p>&copy; {new Date().getFullYear()} Samantha Reyes. All Rights Reserved.</p>
-          </div>
 
-          <div className="flex items-center justify-center md:justify-end gap-5">
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Facebook className="h-5 w-5" />
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Instagram className="h-5 w-5" />
-            </Link>
-             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin className="h-5 w-5" />
-            </Link>
-            <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <ZillowIcon className="h-5 w-5" />
-            </Link>
-             <Link href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <RealtorIcon className="h-6 w-6" />
-            </Link>
-          </div>
+            {/* Column 2: Service Areas */}
+            <div className="text-center md:text-left">
+                <h4 className="font-bold font-headline mb-4">Serving Austin & Surrounding Areas</h4>
+                <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm text-muted-foreground">
+                    <p>Austin</p>
+                    <p>Round Rock</p>
+                    <p>Cedar Park</p>
+                    <p>Pflugerville</p>
+                    <p>Leander</p>
+                    <p>Georgetown</p>
+                    <p>Buda</p>
+                    <p>Kyle</p>
+                </div>
+            </div>
+
+            {/* Column 3: Copyright */}
+            <div className="text-center md:text-right text-sm text-muted-foreground self-end">
+                <p>&copy; {new Date().getFullYear()} Samantha Reyes. All Rights Reserved.</p>
+                <p>Made with ❤️ in Austin, TX</p>
+            </div>
         </div>
       </div>
     </footer>
