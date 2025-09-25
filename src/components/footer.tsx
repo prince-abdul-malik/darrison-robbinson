@@ -21,7 +21,7 @@ export function Footer() {
                 Samantha Reyes
                 </Link>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Image src="/kw-logo.png" alt="Keller Williams Logo" width={30} height={30} />
+                <Image src="/kw-logo.png" alt="Keller Williams Logo" width={70} height={50} />
                 <span>Brokered by Keller Williams Realty</span>
                 </div>
                  <div className="flex items-center justify-center md:justify-start gap-4 mt-2">

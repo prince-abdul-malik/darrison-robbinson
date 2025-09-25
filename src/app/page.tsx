@@ -125,10 +125,10 @@ export default async function Home() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white px-4 -mt-20">
+      <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white px-4">
         <div className="absolute inset-0 bg-black/50 z-10" />
         <Image 
-            src="/family-hero.jpg"
+            src="/people-5.jpg"
             alt="Happy family holding keys in front of their new Austin starter home"
             data-ai-hint="happy family new home"
             fill
@@ -155,7 +155,7 @@ export default async function Home() {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="relative w-full h-[600px] rounded-lg overflow-hidden shadow-xl">
                         <Image 
-                            src="/samantha.jpg" 
+                            src="/samantha-reyes.jpg" 
                             alt="Portrait of Samantha Reyes, friendly Austin realtor"
                             data-ai-hint="friendly woman portrait"
                             fill
@@ -262,7 +262,7 @@ export default async function Home() {
               </div>
               <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-xl">
                 <Image 
-                    src="/austin-downtown.jpg" 
+                    src="/place-1.jpg" 
                     alt="Austin, TX downtown skyline"
                     data-ai-hint="city skyline"
                     fill
@@ -302,7 +302,7 @@ export default async function Home() {
 
 
         {/* Contact Section */}
-        <section id="contact" className="bg-primary/5">
+        <section id="contact" className="bg-secondary/20">
           <div className="container mx-auto px-6 md:px-10">
             <div className="max-w-2xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Let's Find Your First Home</h2>
