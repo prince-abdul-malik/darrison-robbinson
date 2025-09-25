@@ -101,10 +101,10 @@ export default async function Home() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white px-4">
+      <section className="relative w-full h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white px-4 -mt-20">
         <div className="absolute inset-0 bg-black/50 z-10" />
         <Image 
-            src="/family-hero.jpg"
+            src="/people-5.jpg"
             alt="Happy family holding keys in front of their new Austin starter home"
             data-ai-hint="happy family new home"
             fill
@@ -129,9 +129,9 @@ export default async function Home() {
         <section id="about" className="bg-secondary/20">
             <div className="container mx-auto px-6 md:px-10">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-xl">
+                    <div className="relative w-full h-[500px] rounded-lg overflow-hidden shadow-xl">
                         <Image 
-                            src="/samantha-reyes.jpg" 
+                            src="/samantha.jpg" 
                             alt="Portrait of Samantha Reyes, friendly Austin realtor"
                             data-ai-hint="friendly woman portrait"
                             fill

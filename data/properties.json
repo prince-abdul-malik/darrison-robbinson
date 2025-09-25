@@ -8,7 +8,7 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1450,
-    "imageUrl": "https://picsum.photos/seed/starter1/600/400",
+    "imageUrl": "/property-1.jpg",
     "imageHint": "charming bungalow exterior"
   },
   {
@@ -19,7 +19,7 @@
     "bedrooms": 4,
     "bathrooms": 3,
     "sqft": 2600,
-    "imageUrl": "https://picsum.photos/seed/starter2/600/400",
+    "imageUrl": "/property-2.jpg",
     "imageHint": "suburban family house"
   },
   {
@@ -30,7 +30,7 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "sqft": 1600,
-    "imageUrl": "https://picsum.photos/seed/starter3/600/400",
+    "imageUrl": "/property-3.jpg",
     "imageHint": "modern renovated house"
   }
 ]
