@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${property.title} | Samantha Reyes`,
-    description: `View details for ${property.title}, a beautiful starter home in Austin, TX. ${property.bedrooms} beds, ${property.bathrooms} baths. Contact Samantha Reyes for a showing.`,
+    title: `${property.title} | Darrion Robinson`,
+    description: `View details for ${property.title}, a beautiful luxury property in California. ${property.bedrooms} beds, ${property.bathrooms} baths. Contact Darrion Robinson for a showing.`,
     openGraph: {
       images: [property.imageUrl],
     },
@@ -72,7 +72,7 @@ export default async function PropertyDetailsPage({ params }: { params: { id: st
             <div className="lg:col-span-2">
                 <h2 className="text-3xl font-headline font-bold mb-4">About This Home</h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                    Welcome to this charming {property.bedrooms}-bedroom, {property.bathrooms}-bathroom home perfect for first-time buyers or a growing family. Spanning {property.sqft.toLocaleString()} square feet, this property offers a perfect blend of comfort and style. The open-concept living area is ideal for both relaxing and entertaining. The updated kitchen is equipped with modern appliances and ample storage. The primary suite features a private bathroom and a spacious closet. Enjoy the beautiful Texas weather in your private, fenced-in backyard. This home is conveniently located near top-rated schools, parks, and local Austin favorites. Don't miss the opportunity to make this your new dream home!
+                    Welcome to this stunning {property.bedrooms}-bedroom, {property.bathrooms}-bathroom luxury residence. Spanning {property.sqft.toLocaleString()} square feet, this property offers an unparalleled blend of modern elegance and Californian comfort. The open-concept living area is perfect for both lavish entertaining and intimate relaxation. The gourmet kitchen is equipped with state-of-the-art appliances and custom cabinetry. The master suite is a private oasis, featuring a spa-like bathroom and expansive walk-in closet. Enjoy the iconic California lifestyle with breathtaking views from your private outdoor space. This home is conveniently located near premier dining, shopping, and entertainment. Don't miss this rare opportunity to own a piece of paradise.
                 </p>
                  <div className="bg-secondary/30 rounded-lg p-6">
                     <h3 className="text-2xl font-headline font-bold mb-4">Key Details</h3>
