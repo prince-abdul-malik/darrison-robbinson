@@ -12,7 +12,7 @@ interface PropertyCardProps {
 export function PropertyCard({ property }: PropertyCardProps) {
   return (
     <Link href={`/properties/${property.id}`} className="group block h-full">
-        <Card className="w-full h-full flex flex-col overflow-hidden shadow-lg border-none bg-card rounded-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <Card className="w-full h-full flex flex-col overflow-hidden shadow-lg bg-background border border-border/20 rounded-none transition-all duration-300 hover:shadow-2xl hover:border-primary/50 hover:-translate-y-2">
             <CardHeader className="p-0 relative overflow-hidden">
             <Image
                 src={property.imageUrl}
@@ -28,7 +28,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
                 <CardTitle className="text-xl font-headline font-bold mb-2">{property.title}</CardTitle>
                 <CardDescription className="text-sm text-muted-foreground">{property.address}</CardDescription>
             </CardContent>
-            <CardFooter className="p-6 pt-0 mt-auto bg-secondary/30">
+            <CardFooter className="p-6 pt-0 mt-auto bg-transparent border-t border-border/20">
                 <div className="flex items-center text-sm text-muted-foreground space-x-4 w-full">
                     <div className="flex items-center gap-1.5 font-medium">
                         <BedDouble size={16} />

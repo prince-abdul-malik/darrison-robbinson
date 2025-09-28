@@ -10,10 +10,9 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/#listings", label: "Listings" },
-  { href: "/#resources", label: "Resources" },
-  { href: "/#testimonials", label: "Testimonials" },
-  { href: "/#market-updates", label: "Market Updates" },
+  { href: "/#services", label: "Services" },
   { href: "/#about", label: "About" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -54,7 +53,7 @@ export function Header() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         isScrolled || pathname !== "/"
-          ? "bg-background/95 shadow-sm backdrop-blur-sm"
+          ? "bg-background/95 shadow-md backdrop-blur-sm"
           : "bg-transparent"
       )}
     >
@@ -66,14 +65,11 @@ export function Header() {
           isScrolled || pathname !== "/" ? "text-foreground" : "text-white"
         )}
       >
-        Samantha Reyes
+        Darrion Robinson
       </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           <NavLinkItems />
-           <Button asChild size="sm">
-            <Link href="/#contact">Contact Me</Link>
-          </Button>
         </nav>
 
         <div className="md:hidden">
@@ -87,11 +83,11 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] bg-background">
               <div className="p-6">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="mb-8 block font-bold text-2xl font-headline text-foreground">
-                   Samantha Reyes
+                   Darrion Robinson
                 </Link>
                 <nav className="flex flex-col gap-4">
                   <NavLinkItems isMobile />
-                  <Button asChild className="mt-4">
+                  <Button asChild className="mt-4 rounded-none">
                     <Link href="/#contact" onClick={() => setMobileMenuOpen(false)}>Contact Me</Link>
                   </Button>
                 </nav>

@@ -1,13 +1,15 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { Nunito_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google';
 
-const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-nunito-sans' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const playfairDisplay = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair-display' });
 
 export const metadata: Metadata = {
-  title: 'Samantha Reyes - Austin Realtor for First-Time Homebuyers',
-  description: 'As a former teacher, Samantha Reyes specializes in helping first-time homebuyers and young families find their perfect starter home in Austin, TX. Your friendly guide to Austin real estate.',
+  title: 'Darrion Robinson - California Real Estate Expert',
+  description: 'With years of sales experience and a passion for California, Darrion Robinson is here to make your real estate journey an exciting and seamless experience.',
 };
 
 export default function RootLayout({
@@ -20,9 +22,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${nunitoSans.variable} font-body antialiased`}>
+      <body className={`${inter.variable} ${playfairDisplay.variable} font-body antialiased`}>
         {children}
         <Toaster />
       </body>
