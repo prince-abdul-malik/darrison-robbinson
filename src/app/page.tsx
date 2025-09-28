@@ -115,7 +115,7 @@ export default async function Home() {
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <div className="relative w-full min-h-[550px] md:min-h-[700px]">
                         <Image 
-                            src={placeholderImages.agentPortrait.src}
+                            src="/Darrion.jpeg"
                             alt={placeholderImages.agentPortrait.alt}
                             data-ai-hint={placeholderImages.agentPortrait.hint}
                             fill
