@@ -6,7 +6,7 @@ import { getProperties } from "@/lib/properties";
 import { PropertyCard } from "@/components/property-card";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, Star, Music, Waves, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import {
   Accordion,
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/accordion"
 import { type Metadata } from 'next';
 import { Card, CardContent } from "@/components/ui/card";
+import placeholderImages from '@/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Darrion Robinson - Your California Real Estate Expert',
@@ -29,26 +30,26 @@ export default async function Home() {
   const services = [
     {
       title: "Buyer Representation",
-      description: "Finding your dream home in a competitive market requires expertise. I'll guide you through every step, from search to closing, ensuring a seamless and successful purchase.",
+      description: "Finding your dream home in a competitive market like Los Angeles or Malibu requires expertise. I'll guide you through every step, from search to closing, ensuring a seamless and successful purchase.",
     },
     {
       title: "Seller Representation",
-      description: "Selling your home for top dollar requires strategic marketing and negotiation. My proven sales background ensures your property stands out and attracts the right buyers.",
+      description: "Selling your Calabasas home for top dollar requires strategic marketing and negotiation. My proven sales background ensures your property stands out and attracts the right buyers.",
     },
     {
       title: "Investment Properties",
-      description: "California real estate is a powerful investment. I'll help you identify and acquire properties with the highest potential for appreciation and return on investment.",
+      description: "California real estate is a powerful investment. I'll help you identify and acquire properties with the highest potential for appreciation and return on investment across Southern California.",
     },
   ];
 
   const faqs = [
     {
       question: "What makes the California real estate market unique?",
-      answer: "California's market is incredibly diverse, with a wide range of property types and micro-markets. It's also highly competitive. My deep local knowledge is your advantage in navigating this complexity and finding the right opportunities."
+      answer: "California's market, especially in areas like Calabasas and Malibu, is incredibly diverse and competitive. My deep local knowledge is your advantage in navigating this complexity and finding the right opportunities."
     },
     {
       question: "How do you help buyers win in a competitive situation?",
-      answer: "My sales experience is key. I craft compelling offers, build strong relationships with listing agents, and utilize negotiation strategies to position my clients for success, even in multiple-offer scenarios."
+      answer: "My sales experience is key. I craft compelling offers, build strong relationships with listing agents, and utilize negotiation strategies to position my clients for success, even in multiple-offer scenarios in the Los Angeles market."
     },
     {
         question: "What's your strategy for marketing a luxury property?",
@@ -58,7 +59,25 @@ export default async function Home() {
         question: "Why is Los Angeles a good place to invest in real estate?",
         answer: "Los Angeles is a world-class city with a robust economy, diverse culture, and a consistently strong demand for housing. This makes it a resilient market with excellent long-term appreciation potential for savvy investors."
     }
-  ]
+  ];
+
+  const testimonials = [
+    {
+        name: "Michael & Sarah T.",
+        location: "Calabasas, CA",
+        quote: "Darrion made our first home buying experience in California a breeze! His expertise and dedication were evident from start to finish. He found us the perfect home in a great school district. We couldn't be happier!"
+    },
+    {
+        name: "James L.",
+        location: "Malibu, CA",
+        quote: "As an investor, I need an agent who understands the market intricacies. Darrion's insight into the Malibu market is unparalleled. He helped me secure a beachfront property with fantastic ROI potential. A true professional."
+    },
+    {
+        name: "The Chen Family",
+        location: "Los Angeles, CA",
+        quote: "Selling our home with Darrion was the best decision we made. His marketing strategy was brilliant, and he negotiated a price that far exceeded our expectations. He was always available and supportive. Highly recommend!"
+    }
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -67,11 +86,11 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center text-center text-white px-4">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="absolute inset-0 top-0 h-24 bg-gradient-to-b from-black/70 to-transparent z-10" />
+        <div className="absolute inset-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent z-10" />
         <Image 
-            src="/property-2.jpg"
-            alt="Luxurious modern villa overlooking the ocean in California"
-            data-ai-hint="luxury villa ocean"
+            src={placeholderImages.heroLuxury.src}
+            alt={placeholderImages.heroLuxury.alt}
+            data-ai-hint={placeholderImages.heroLuxury.hint}
             fill
             className="object-cover"
             priority
@@ -81,7 +100,7 @@ export default async function Home() {
               California Real Estate, Redefined.
             </h1>
             <p className="max-w-2xl text-lg md:text-xl text-white/80 mb-8">
-              One call away from your dream home.
+              One call away from your dream home in Los Angeles, Calabasas, or Malibu.
             </p>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none">
                 <Link href="#contact">Book a Consultation <ArrowRight className="ml-2" /></Link>
@@ -94,13 +113,13 @@ export default async function Home() {
         <section id="about" className="bg-background">
             <div className="container mx-auto px-6 md:px-10">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
-                    <div className="relative w-full h-[600px]">
+                    <div className="relative w-full min-h-[550px] md:min-h-[700px]">
                         <Image 
-                            src="/darrion-robinson.jpg"
-                            alt="Portrait of Darrion Robinson, California real estate expert"
-                            data-ai-hint="professional man portrait"
+                            src={placeholderImages.agentPortrait.src}
+                            alt={placeholderImages.agentPortrait.alt}
+                            data-ai-hint={placeholderImages.agentPortrait.hint}
                             fill
-                            className="object-cover"
+                            className="object-cover rounded-sm"
                         />
                     </div>
                     <div className="max-w-lg">
@@ -125,7 +144,7 @@ export default async function Home() {
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-5xl font-headline mb-4">Featured California Properties</h2>
               <p className="text-muted-foreground">
-                A curated selection of premier listings from across the Golden State.
+                A curated selection of premier listings from Calabasas, Malibu, and beyond.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -164,26 +183,87 @@ export default async function Home() {
             </div>
         </section>
         
-        {/* Call to Action Section */}
-        <section className="relative bg-secondary py-24">
+        {/* Testimonials Section */}
+        <section id="testimonials" className="bg-secondary">
+            <div className="container mx-auto px-6 md:px-10">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <h2 className="text-3xl md:text-5xl font-headline mb-4">What My Clients Say</h2>
+                    <p className="text-muted-foreground">
+                        Building lasting relationships is the cornerstone of my business.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {testimonials.map((testimonial, index) => (
+                        <Card key={index} className="bg-background border-border/20 rounded-none text-center p-8">
+                            <CardContent className="p-0">
+                                <div className="flex justify-center mb-4">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} className="text-primary fill-primary" />
+                                    ))}
+                                </div>
+                                <p className="text-muted-foreground mb-4 italic">"{testimonial.quote}"</p>
+                                <p className="font-bold font-headline text-lg">{testimonial.name}</p>
+                                <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* Dubai Section */}
+        <section id="dubai" className="relative bg-black text-white py-24">
              <div className="absolute inset-0">
                 <Image 
-                    src="/place-2.jpg" 
-                    alt="Luxury home interior with view of Los Angeles"
-                    data-ai-hint="luxury home interior"
+                    src={placeholderImages.dubai.src}
+                    alt={placeholderImages.dubai.alt}
+                    data-ai-hint={placeholderImages.dubai.hint}
                     fill
-                    className="object-cover"
+                    className="object-cover opacity-40"
                 />
-                <div className="absolute inset-0 bg-black/70" />
             </div>
-            <div className="container mx-auto px-6 md:px-10 relative z-10 text-center text-white">
-                <h2 className="text-3xl md:text-5xl font-headline mb-4">Let's Turn Your Real Estate Dreams Into Reality</h2>
-                <p className="max-w-2xl mx-auto text-lg text-white/80 mb-8">
-                    Your journey towards owning or selling the perfect California property starts with a single call.
-                </p>
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none">
-                    <a href="tel:8182695059"><Phone className="mr-2" /> (818) 269-5059</a>
-                </Button>
+            <div className="container mx-auto px-6 md:px-10 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                <div className="max-w-xl">
+                    <h2 className="text-3xl md:text-5xl font-headline mb-4">Invest in Dubai Real Estate</h2>
+                    <p className="text-lg text-white/80 mb-6">
+                       In partnership with <span className="font-bold text-primary">Nobel Casa Dubai</span>
+                    </p>
+                    <p className="text-white/70 leading-relaxed mb-8">
+                        Dubai’s real estate market isn’t just booming—it’s evolving. As your dedicated property investment consultant, I help you navigate this dynamic landscape with clarity, strategy, and confidence. Whether you’re looking for high-yield rental properties, off-plan opportunities, or long-term capital growth, I offer expert insights backed by market data, developer connections, and a deep understanding of Dubai’s regulatory environment.
+                    </p>
+                     <Button asChild size="lg" variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-white">
+                        <Link href="#contact">Invest Smarter in Dubai</Link>
+                    </Button>
+                </div>
+                 <div>
+                    {/* Intentionally left blank for visual balance */}
+                </div>
+            </div>
+        </section>
+
+        {/* Music Section */}
+        <section id="music" className="bg-secondary">
+            <div className="container mx-auto px-6 md:px-10">
+                 <div className="grid md:grid-cols-2 gap-16 items-center">
+                     <div className="max-w-lg">
+                        <h2 className="text-3xl md:text-5xl font-headline mb-6">More Than an Agent</h2>
+                        <p className="text-muted-foreground leading-relaxed mb-8">
+                           Outside of real estate, Darrion is a passionate DJ and music producer. This creative outlet sharpens his attention to detail and ability to curate unique experiences—skills he brings to every client relationship. Whether orchestrating a deal or a DJ set, the goal is always a flawless execution and an unforgettable result.
+                        </p>
+                        <Button asChild variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                            <Link href="#contact">Let’s Create Something Great</Link>
+                        </Button>
+                    </div>
+                    <div className="relative w-full min-h-[500px]">
+                        <Image 
+                            src={placeholderImages.dj.src}
+                            alt={placeholderImages.dj.alt}
+                            data-ai-hint={placeholderImages.dj.hint}
+                            fill
+                            className="object-cover rounded-sm"
+                        />
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -213,11 +293,11 @@ export default async function Home() {
             <div className="max-w-2xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-headline mb-4">Get In Touch</h2>
               <p className="text-muted-foreground">
-                Ready to take the next step? Fill out the form below or call me directly. I look forward to connecting with you.
+                Ready to take the next step in your California or Dubai real estate journey? Fill out the form below or call me directly.
               </p>
             </div>
             <div className="max-w-2xl mx-auto">
-                <div className="bg-background p-8">
+                <div className="bg-background p-8 rounded-sm">
                     <ContactForm />
                 </div>
             </div>

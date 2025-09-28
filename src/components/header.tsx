@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -11,8 +12,9 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { href: "/#listings", label: "Listings" },
   { href: "/#services", label: "Services" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#dubai", label: "Dubai" },
   { href: "/#about", label: "About" },
-  { href: "/#faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -51,7 +53,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "fixed top-0 z-50 w-full transition-all duration-300",
         isScrolled || pathname !== "/"
           ? "bg-background/95 shadow-md backdrop-blur-sm"
           : "bg-transparent"

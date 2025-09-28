@@ -1,0 +1,22 @@
+{
+  "heroLuxury": {
+    "src": "https://picsum.photos/seed/luxurypool/1920/1080",
+    "alt": "Luxurious modern villa overlooking the ocean in California",
+    "hint": "luxury villa ocean"
+  },
+  "agentPortrait": {
+    "src": "https://picsum.photos/seed/agent/600/800",
+    "alt": "Portrait of Darrion Robinson, California real estate expert",
+    "hint": "professional man portrait"
+  },
+  "dubai": {
+    "src": "https://picsum.photos/seed/dubaiskyline/1920/1080",
+    "alt": "Dubai skyline at night",
+    "hint": "dubai skyline night"
+  },
+  "dj": {
+    "src": "https://picsum.photos/seed/djsetup/800/600",
+    "alt": "Professional DJ setup with turntables and mixer",
+    "hint": "dj setup turntables"
+  }
+}
