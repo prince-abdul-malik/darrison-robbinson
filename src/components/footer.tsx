@@ -15,7 +15,7 @@ export function Footer() {
                 Darrion Robinson
                 </Link>
                 <div className="flex items-center gap-3">
-                  <Image src="/cb-luxury-logo-white.png" alt="Coldwell Banker Global Luxury Logo" width={200} height={40} />
+                  <Image src="/CBR_logo_white.png" alt="Coldwell Banker Global Luxury Logo" width={200} height={40} />
                 </div>
                 <p className="text-sm text-muted-foreground">License: 02233342 CA</p>
             </div>

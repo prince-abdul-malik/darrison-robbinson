@@ -88,7 +88,7 @@ export default async function Home() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent z-10" />
         <Image 
-            src={placeholderImages.heroLuxury.src}
+            src="/property-9.jpg"
             alt={placeholderImages.heroLuxury.alt}
             data-ai-hint={placeholderImages.heroLuxury.hint}
             fill
@@ -215,7 +215,7 @@ export default async function Home() {
         <section id="dubai" className="relative bg-black text-white py-24">
              <div className="absolute inset-0">
                 <Image 
-                    src={placeholderImages.dubai.src}
+                    src="/dubai-1.jpg"
                     alt={placeholderImages.dubai.alt}
                     data-ai-hint={placeholderImages.dubai.hint}
                     fill
