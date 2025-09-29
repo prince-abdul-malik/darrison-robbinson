@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -5,7 +6,7 @@ import { getProperties } from "@/lib/properties";
 import { PropertyCard } from "@/components/property-card";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import {
   Accordion,
@@ -60,24 +61,6 @@ export default async function Home() {
     }
   ];
 
-  const testimonials = [
-    {
-        name: "Michael & Sarah T.",
-        location: "Calabasas, CA",
-        quote: "Darrion made our first home buying experience in California a breeze! His expertise and dedication were evident from start to finish. He found us the perfect home in a great school district. We couldn't be happier!"
-    },
-    {
-        name: "James L.",
-        location: "Malibu, CA",
-        quote: "As an investor, I need an agent who understands the market intricacies. Darrion's insight into the Malibu market is unparalleled. He helped me secure a beachfront property with fantastic ROI potential. A true professional."
-    },
-    {
-        name: "The Chen Family",
-        location: "Los Angeles, CA",
-        quote: "Selling our home with Darrion was the best decision we made. His marketing strategy was brilliant, and he negotiated a price that far exceeded our expectations. He was always available and supportive. Highly recommend!"
-    }
-  ];
-
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
@@ -91,7 +74,7 @@ export default async function Home() {
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            src="/Darrion-Vid-1.mp4"
+            src="/dr_bg_video.mp4"
         />
         <div className="relative z-20 flex flex-col items-center">
             <h1 className="text-4xl md:text-7xl font-headline tracking-tight mb-4 leading-tight">
@@ -100,9 +83,6 @@ export default async function Home() {
             <p className="max-w-2xl text-lg md:text-xl text-white/80 mb-8">
               One call away from your dream home in Los Angeles, Calabasas, or Malibu.
             </p>
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-none">
-                <Link href="#contact">Book a Consultation <ArrowRight className="ml-2" /></Link>
-            </Button>
         </div>
       </section>
 
@@ -181,34 +161,6 @@ export default async function Home() {
             </div>
         </section>
         
-        {/* Testimonials Section */}
-        <section id="testimonials" className="bg-background">
-            <div className="container mx-auto px-6 md:px-10">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <h2 className="text-3xl md:text-5xl font-headline mb-4">What My Clients Say</h2>
-                    <p className="text-muted-foreground">
-                        Building lasting relationships is the cornerstone of my business.
-                    </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-secondary/30 border-border/20 rounded-none text-center p-8">
-                            <CardContent className="p-0">
-                                <div className="flex justify-center mb-4">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className="text-primary fill-primary" />
-                                    ))}
-                                </div>
-                                <p className="text-muted-foreground mb-4 italic">"{testimonial.quote}"</p>
-                                <p className="font-bold font-headline text-lg">{testimonial.name}</p>
-                                <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-            </div>
-        </section>
-
         {/* Dubai Section */}
         <section id="dubai" className="relative bg-white text-foreground py-24">
              <div className="absolute inset-0">
@@ -220,17 +172,17 @@ export default async function Home() {
                     className="object-cover"
                 />
             </div>
-            <div className="absolute inset-0 bg-white/30" />
+            <div className="absolute inset-0 bg-black/60" />
             <div className="container mx-auto px-6 md:px-10 relative z-10 grid md:grid-cols-2 gap-12 items-center">
                 <div className="max-w-xl">
-                    <h2 className="text-3xl md:text-5xl font-headline mb-4 text-foreground">Invest in Dubai Real Estate</h2>
-                    <p className="text-lg text-primary font-bold mb-6">
+                    <h2 className="text-3xl md:text-5xl font-headline mb-4 text-white">Invest in Dubai Real Estate</h2>
+                    <p className="text-lg text-white/90 font-bold mb-6">
                        In partnership with Nobel Casa Dubai
                     </p>
-                    <p className="text-foreground/80 leading-relaxed mb-8">
+                    <p className="text-white/80 leading-relaxed mb-8">
                         Dubai’s real estate market isn’t just booming—it’s evolving. As your dedicated property investment consultant, I help you navigate this dynamic landscape with clarity, strategy, and confidence. Whether you’re looking for high-yield rental properties, off-plan opportunities, or long-term capital growth, I offer expert insights backed by market data, developer connections, and a deep understanding of Dubai’s regulatory environment.
                     </p>
-                     <Button asChild size="lg" variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                     <Button asChild size="lg" variant="outline" className="rounded-none border-white text-white hover:bg-white hover:text-foreground">
                         <Link href="#contact">Invest Smarter in Dubai</Link>
                     </Button>
                 </div>
