@@ -86,14 +86,13 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center text-center text-white px-4">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="absolute inset-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent z-10" />
-        <Image 
-            src="/property-9.jpg"
-            alt={placeholderImages.heroLuxury.alt}
-            data-ai-hint={placeholderImages.heroLuxury.hint}
-            fill
-            className="object-cover"
-            priority
+        <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            src="/dr_bg_video.mp4"
         />
         <div className="relative z-20 flex flex-col items-center">
             <h1 className="text-4xl md:text-7xl font-headline tracking-tight mb-4 leading-tight">
