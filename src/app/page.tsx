@@ -74,7 +74,7 @@ export default async function Home() {
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            src="/dr_bg_video.mp4"
+            src="/Darrion-Vid-1.mp4"
         />
         <div className="relative z-20 flex flex-col items-center">
             <h1 className="text-4xl md:text-7xl font-headline tracking-tight mb-4 leading-tight">
@@ -207,7 +207,7 @@ export default async function Home() {
                     </div>
                     <div className="relative w-full min-h-[500px]">
                         <Image 
-                            src={placeholderImages.dj.src}
+                            src="/Darrion-2.jpg"
                             alt={placeholderImages.dj.alt}
                             data-ai-hint={placeholderImages.dj.hint}
                             fill
