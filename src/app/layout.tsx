@@ -2,8 +2,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { Inter, Nunito_Sans } from 'next/font/google';
-import { Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfairDisplay = Playfair_Display({ subsets: ['latin'], weight: "700", variable: '--font-playfair-display' });

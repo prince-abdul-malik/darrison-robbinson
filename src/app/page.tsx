@@ -6,7 +6,7 @@ import { getProperties } from "@/lib/properties";
 import { PropertyCard } from "@/components/property-card";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, Star, Music, Waves, MapPin } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import {
   Accordion,
@@ -87,6 +87,7 @@ export default async function Home() {
       <section className="relative w-full h-screen min-h-[700px] flex items-center justify-center text-center text-white px-4">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent z-10" />
+        <div className="absolute inset-0 bottom-0 h-32 bg-gradient-to-t from-black/70 to-transparent z-10" />
         <Image 
             src="/property-9.jpg"
             alt={placeholderImages.heroLuxury.alt}
