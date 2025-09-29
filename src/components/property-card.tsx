@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { BedDouble, Bath, Square, ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { BedDouble, Bath, Square } from "lucide-react";
 import { Property } from "@/lib/properties";
+import { cn } from "@/lib/utils";
 
 interface PropertyCardProps {
   property: Property;
@@ -12,19 +13,24 @@ interface PropertyCardProps {
 export function PropertyCard({ property }: PropertyCardProps) {
   return (
     <Link href={`/properties/${property.id}`} className="group block h-full">
-        <Card className="w-full h-full flex flex-col overflow-hidden shadow-lg bg-background border border-border/20 rounded-none transition-all duration-300 hover:shadow-2xl hover:border-primary/50 hover:-translate-y-2">
+        <Card className="w-full h-full flex flex-col overflow-hidden shadow-lg bg-card border border-border/20 rounded-none transition-all duration-300 hover:shadow-2xl hover:border-primary/50 hover:-translate-y-2">
             <CardHeader className="p-0 relative overflow-hidden">
-            <Image
-                src={property.imageUrl}
-                alt={property.title}
-                data-ai-hint={property.imageHint}
-                width={600}
-                height={400}
-                className="object-cover w-full h-56"
-            />
+                <Badge className={cn("absolute top-3 right-3 z-10 rounded-sm", property.status === "Sold" ? "bg-destructive" : "bg-primary")}>
+                    {property.status}
+                </Badge>
+                <Image
+                    src={property.imageUrl}
+                    alt={property.title}
+                    data-ai-hint={property.imageHint}
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-56 transition-transform duration-300 group-hover:scale-105"
+                />
             </CardHeader>
             <CardContent className="p-6 flex-grow">
-                <p className="text-lg font-bold text-primary mb-2">${Number(property.price).toLocaleString()}</p>
+                <p className="text-lg font-bold text-primary mb-2">
+                    {property.status === "Sold" ? "Sold for " : ""}${Number(property.price).toLocaleString()}
+                </p>
                 <CardTitle className="text-xl font-headline font-bold mb-2">{property.title}</CardTitle>
                 <CardDescription className="text-sm text-muted-foreground">{property.address}</CardDescription>
             </CardContent>

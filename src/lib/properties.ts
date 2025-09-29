@@ -5,11 +5,13 @@ import { z } from 'zod';
 const propertySchema = z.object({
   id: z.number(),
   title: z.string(),
+  status: z.enum(['For Sale', 'Sold']),
   price: z.string(),
   address: z.string(),
   bedrooms: z.number(),
   bathrooms: z.number(),
   sqft: z.number(),
+  description: z.string(),
   imageUrl: z.string(),
   imageHint: z.string(),
 });

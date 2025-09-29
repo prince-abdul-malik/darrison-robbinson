@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -80,7 +79,7 @@ export default async function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       
       {/* Hero Section */}
@@ -92,7 +91,7 @@ export default async function Home() {
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            src="/dr_bg_video2.mp4"
+            src="/dr_bg_video.mp4"
         />
         <div className="relative z-20 flex flex-col items-center">
             <h1 className="text-4xl md:text-7xl font-headline tracking-tight mb-4 leading-tight">
@@ -109,7 +108,7 @@ export default async function Home() {
 
       <main className="flex-grow">
         {/* About Section */}
-        <section id="about" className="bg-background">
+        <section id="about" className="bg-secondary/30">
             <div className="container mx-auto px-6 md:px-10">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <div className="relative w-full min-h-[550px] md:min-h-[700px]">
@@ -138,7 +137,7 @@ export default async function Home() {
         </section>
 
         {/* Featured Listings Section */}
-        <section id="listings" className="bg-secondary">
+        <section id="listings" className="bg-background">
           <div className="container mx-auto px-6 md:px-10">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-5xl font-headline mb-4">Featured California Properties</h2>
@@ -146,7 +145,7 @@ export default async function Home() {
                 A curated selection of premier listings from Calabasas, Malibu, and beyond.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               {properties.map((property) => (
                 <PropertyCard key={property.id} property={property} />
               ))}
@@ -160,7 +159,7 @@ export default async function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="bg-background">
+        <section id="services" className="bg-secondary/30">
             <div className="container mx-auto px-6 md:px-10">
                 <div className="text-center max-w-3xl mx-auto mb-12">
                     <h2 className="text-3xl md:text-5xl font-headline mb-4">A Bespoke Real Estate Experience</h2>
@@ -183,7 +182,7 @@ export default async function Home() {
         </section>
         
         {/* Testimonials Section */}
-        <section id="testimonials" className="bg-secondary">
+        <section id="testimonials" className="bg-background">
             <div className="container mx-auto px-6 md:px-10">
                 <div className="text-center max-w-3xl mx-auto mb-12">
                     <h2 className="text-3xl md:text-5xl font-headline mb-4">What My Clients Say</h2>
@@ -193,7 +192,7 @@ export default async function Home() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-background border-border/20 rounded-none text-center p-8">
+                        <Card key={index} className="bg-secondary/30 border-border/20 rounded-none text-center p-8">
                             <CardContent className="p-0">
                                 <div className="flex justify-center mb-4">
                                     {[...Array(5)].map((_, i) => (
@@ -218,16 +217,17 @@ export default async function Home() {
                     alt={placeholderImages.dubai.alt}
                     data-ai-hint={placeholderImages.dubai.hint}
                     fill
-                    className="object-cover opacity-20"
+                    className="object-cover"
                 />
             </div>
+            <div className="absolute inset-0 bg-white/30" />
             <div className="container mx-auto px-6 md:px-10 relative z-10 grid md:grid-cols-2 gap-12 items-center">
                 <div className="max-w-xl">
-                    <h2 className="text-3xl md:text-5xl font-headline mb-4">Invest in Dubai Real Estate</h2>
+                    <h2 className="text-3xl md:text-5xl font-headline mb-4 text-foreground">Invest in Dubai Real Estate</h2>
                     <p className="text-lg text-primary font-bold mb-6">
                        In partnership with Nobel Casa Dubai
                     </p>
-                    <p className="text-muted-foreground leading-relaxed mb-8">
+                    <p className="text-foreground/80 leading-relaxed mb-8">
                         Dubai’s real estate market isn’t just booming—it’s evolving. As your dedicated property investment consultant, I help you navigate this dynamic landscape with clarity, strategy, and confidence. Whether you’re looking for high-yield rental properties, off-plan opportunities, or long-term capital growth, I offer expert insights backed by market data, developer connections, and a deep understanding of Dubai’s regulatory environment.
                     </p>
                      <Button asChild size="lg" variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground">
@@ -241,7 +241,7 @@ export default async function Home() {
         </section>
 
         {/* Music Section */}
-        <section id="music" className="bg-secondary">
+        <section id="music" className="bg-secondary/30">
             <div className="container mx-auto px-6 md:px-10">
                  <div className="grid md:grid-cols-2 gap-16 items-center">
                      <div className="max-w-lg">
@@ -287,7 +287,7 @@ export default async function Home() {
 
 
         {/* Contact Section */}
-        <section id="contact" className="bg-secondary">
+        <section id="contact" className="bg-secondary/30">
           <div className="container mx-auto px-6 md:px-10">
             <div className="max-w-2xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-5xl font-headline mb-4">Get In Touch</h2>

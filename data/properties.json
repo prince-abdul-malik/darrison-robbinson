@@ -2,35 +2,28 @@
 [
   {
     "id": 1,
-    "title": "Charming East Austin Bungalow",
-    "price": "525000",
-    "address": "1234 Rosewood Ave, Austin, TX",
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "sqft": 1450,
-    "imageUrl": "/property-1.jpg",
-    "imageHint": "charming bungalow exterior"
+    "title": "Move-In Ready Palmdale Home with ADU",
+    "status": "For Sale",
+    "price": "550000",
+    "address": "37815 Robina Avenue Palmdale, CA 93550",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "sqft": 1483,
+    "description": "This move-in ready, beautifully updated home offers the perfect balance of comfort and investment potential. The main house boasts an open floor plan, brand-new kitchen appliances, and spacious bedrooms—ideal for family living. Plus, the attached 1-bed, 1-bath ADU with its own private entrance is a lucrative opportunity for rental income, or a perfect private retreat for guests or multi-generational living. Step outside to your expansive, fully fenced yard—endless possibilities await, from creating a resort-style pool and spa to designing the ultimate entertainment space. Located just a short walk from an elementary school, you’ll enjoy both privacy and unbeatable convenience.",
+    "imageUrl": "https://picsum.photos/seed/palmdalehome/600/400",
+    "imageHint": "modern suburban house"
   },
   {
     "id": 2,
-    "title": "Family Home in Circle C",
-    "price": "780000",
-    "address": "5678 Escarpment Blvd, Austin, TX",
+    "title": "Remodeled Calabasas View Home",
+    "status": "Sold",
+    "price": "1200000",
+    "address": "26114 Roymor Drive Calabasas, CA 91302",
     "bedrooms": 4,
-    "bathrooms": 3,
-    "sqft": 2600,
-    "imageUrl": "/property-2.jpg",
-    "imageHint": "suburban family house"
-  },
-  {
-    "id": 3,
-    "title": "Updated North Loop Gem",
-    "price": "615000",
-    "address": "9101 North Lamar, Austin, TX",
-    "bedrooms": 3,
     "bathrooms": 2,
-    "sqft": 1600,
-    "imageUrl": "/property-3.jpg",
-    "imageHint": "modern renovated house"
+    "sqft": 1850,
+    "description": "Beautiful Malibu Canyon neighborhood single story home. This is your opportunity to purchase a sought after view home that has been remodeled and lovingly cared for. Pride of ownership really shows. Gorgeous view and a large grassy private yard. All four bedrooms have wonderful natural light and the floor plan is very open and spacious. Located in the prestigious Las Virgenes Unified School District and minutes from shopping and dining at the Commons. It is close to excellent hiking and biking trails that offer enjoyment in the Santa Monica Mountains.",
+    "imageUrl": "https://picsum.photos/seed/calabasashome/600/400",
+    "imageHint": "remodeled view home"
   }
 ]
