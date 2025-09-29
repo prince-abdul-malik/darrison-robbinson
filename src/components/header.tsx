@@ -64,7 +64,7 @@ export function Header() {
         href="/"
         className={cn(
           "font-bold text-xl font-headline transition-colors",
-          isScrolled || pathname !== "/" ? "text-foreground" : "text-white"
+          isScrolled || pathname !== "/" ? "text-primary" : "text-white"
         )}
       >
         Darrion Robinson

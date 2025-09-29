@@ -212,26 +212,26 @@ export default async function Home() {
         </section>
 
         {/* Dubai Section */}
-        <section id="dubai" className="relative bg-black text-white py-24">
+        <section id="dubai" className="relative bg-white text-foreground py-24">
              <div className="absolute inset-0">
                 <Image 
                     src="/dubai-1.jpg"
                     alt={placeholderImages.dubai.alt}
                     data-ai-hint={placeholderImages.dubai.hint}
                     fill
-                    className="object-cover opacity-40"
+                    className="object-cover opacity-20"
                 />
             </div>
             <div className="container mx-auto px-6 md:px-10 relative z-10 grid md:grid-cols-2 gap-12 items-center">
                 <div className="max-w-xl">
                     <h2 className="text-3xl md:text-5xl font-headline mb-4">Invest in Dubai Real Estate</h2>
-                    <p className="text-lg text-white/80 mb-6">
-                       In partnership with <span className="font-bold text-primary">Nobel Casa Dubai</span>
+                    <p className="text-lg text-primary font-bold mb-6">
+                       In partnership with Nobel Casa Dubai
                     </p>
-                    <p className="text-white/70 leading-relaxed mb-8">
+                    <p className="text-muted-foreground leading-relaxed mb-8">
                         Dubai’s real estate market isn’t just booming—it’s evolving. As your dedicated property investment consultant, I help you navigate this dynamic landscape with clarity, strategy, and confidence. Whether you’re looking for high-yield rental properties, off-plan opportunities, or long-term capital growth, I offer expert insights backed by market data, developer connections, and a deep understanding of Dubai’s regulatory environment.
                     </p>
-                     <Button asChild size="lg" variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-white">
+                     <Button asChild size="lg" variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                         <Link href="#contact">Invest Smarter in Dubai</Link>
                     </Button>
                 </div>
