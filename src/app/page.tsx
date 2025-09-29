@@ -88,7 +88,7 @@ export default async function Home() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent z-10" />
         <Image 
-            src="/property-2.jpg"
+            src="/property-27.jpg"
             alt={placeholderImages.heroLuxury.alt}
             data-ai-hint={placeholderImages.heroLuxury.hint}
             fill
