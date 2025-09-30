@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import { handleContactInquiry } from "@/ai/flows/contact-flow";
+import { handleContactInquiry } from "@/app/actions";
 import { Loader2 } from "lucide-react";
 
 const contactSchema = z.object({
