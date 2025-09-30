@@ -61,7 +61,7 @@ export function Footer() {
             {/* Column 3: Social & Copyright */}
             <div className="flex flex-col items-center md:items-end text-center md:text-right text-sm text-muted-foreground">
                  <div className="flex items-center gap-4 mb-4">
-                    <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <Link href="https://www.instagram.com/darrion_calabasas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <Instagram className="w-6 h-6 text-muted-foreground hover:text-primary transition-colors" />
                     </Link>
                     <Link href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
