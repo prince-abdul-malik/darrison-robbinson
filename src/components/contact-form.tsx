@@ -8,6 +8,9 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+import { handleContactInquiry } from "@/ai/flows/contact-flow";
+import { Loader2 } from "lucide-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -17,6 +20,7 @@ const contactSchema = z.object({
 
 export function ContactForm() {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
@@ -27,13 +31,30 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof contactSchema>) {
-    console.log(values);
-    form.reset();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your inquiry. We will be in touch shortly.",
-    });
+  async function onSubmit(values: z.infer<typeof contactSchema>) {
+    setIsLoading(true);
+    try {
+        const result = await handleContactInquiry(values);
+        
+        if (result.success) {
+            toast({
+                title: "Message Sent!",
+                description: result.message,
+            });
+            form.reset();
+        } else {
+            throw new Error(result.message);
+        }
+    } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred.";
+        toast({
+            variant: "destructive",
+            title: "Error",
+            description: errorMessage,
+        });
+    } finally {
+        setIsLoading(false);
+    }
   }
 
   return (
@@ -47,7 +68,7 @@ export function ContactForm() {
                 <FormItem>
                 <FormLabel>Full Name</FormLabel>
                 <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input placeholder="John Doe" {...field} disabled={isLoading} />
                 </FormControl>
                 <FormMessage />
                 </FormItem>
@@ -60,7 +81,7 @@ export function ContactForm() {
                 <FormItem>
                 <FormLabel>Email Address</FormLabel>
                 <FormControl>
-                    <Input placeholder="you@example.com" {...field} />
+                    <Input placeholder="you@example.com" {...field} disabled={isLoading} />
                 </FormControl>
                 <FormMessage />
                 </FormItem>
@@ -75,13 +96,14 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Your Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="I'm interested in learning more about..." rows={5} {...field} />
+                <Textarea placeholder="I'm interested in learning more about..." rows={5} {...field} disabled={isLoading} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" size="lg" className="w-full">
+        <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
+            {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Send Inquiry
         </Button>
       </form>
