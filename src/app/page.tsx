@@ -74,7 +74,7 @@ export default async function Home() {
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            src="/Darrion-Vid-1.mp4"
+            src="/dr_bg_video.mp4"
         />
         <div className="relative z-20 flex flex-col items-center">
             <h1 className="text-4xl md:text-7xl font-headline tracking-tight mb-4 leading-tight">
@@ -182,7 +182,7 @@ export default async function Home() {
                     <p className="text-white/80 leading-relaxed mb-8">
                         Dubai’s real estate market isn’t just booming—it’s evolving. As your dedicated property investment consultant, I help you navigate this dynamic landscape with clarity, strategy, and confidence. Whether you’re looking for high-yield rental properties, off-plan opportunities, or long-term capital growth, I offer expert insights backed by market data, developer connections, and a deep understanding of Dubai’s regulatory environment.
                     </p>
-                     <Button asChild size="lg" variant="outline" className="rounded-none border-white text-white hover:bg-white hover:text-black">
+                     <Button asChild size="lg" className="rounded-none bg-white text-black hover:bg-transparent hover:text-white border-2 border-white">
                         <Link href="#contact">Invest Smarter in Dubai</Link>
                     </Button>
                 </div>
