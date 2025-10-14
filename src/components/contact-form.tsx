@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import { handleContactInquiry } from "@/app/actions";
+import emailjs from "@emailjs/browser";
 import { Loader2 } from "lucide-react";
 
 const contactSchema = z.object({
@@ -33,27 +33,33 @@ export function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof contactSchema>) {
     setIsLoading(true);
+
+    const serviceId = "service_te3a194";
+    const templateId = "template_kly2ou7";
+    const publicKey = "ppvrrOjidfL4oi5nz";
+
+    const templateParams = {
+      full_name: values.name,
+      email: values.email,
+      message: values.message,
+    };
+
     try {
-        const result = await handleContactInquiry(values);
-        
-        if (result.success) {
-            toast({
-                title: "Message Sent!",
-                description: result.message,
-            });
-            form.reset();
-        } else {
-            throw new Error(result.message);
-        }
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      toast({
+        title: "Message Sent!",
+        description: "Your inquiry has been received! I will get back to you shortly.",
+      });
+      form.reset();
     } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred.";
-        toast({
-            variant: "destructive",
-            title: "Error",
-            description: errorMessage,
-        });
+      console.error("EmailJS error:", error);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+      });
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
   }
 
