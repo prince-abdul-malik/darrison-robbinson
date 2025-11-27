@@ -35,7 +35,7 @@ export function Footer() {
                 Darrion Robinson
                 </Link>
                 <div className="flex items-center gap-3">
-                  <Image src="/CB_logo_colored.svg" alt="Coldwell Banker Global Luxury Logo" width={200} height={40} />
+                  <Image src="/compass.jpg" alt="Compass Logo" width={160} height={40} />
                 </div>
                 <p className="text-sm text-muted-foreground">License: 02233342 CA</p>
             </div>
@@ -44,7 +44,7 @@ export function Footer() {
             <div className="text-sm text-muted-foreground flex flex-col gap-y-3 text-center md:text-left">
                 <div className="mb-4">
                   <h4 className="font-bold font-headline text-lg text-foreground mb-2">Contact Information</h4>
-                  <p>Coldwell Banker Realty</p>
+                  <p>Compass</p>
                   <p>23647 Calabasas Rd, Calabasas, CA 91302</p>
                   <p>Office: (818) 222-0023</p>
                   <p>Direct: (818) 269-5059</p>
