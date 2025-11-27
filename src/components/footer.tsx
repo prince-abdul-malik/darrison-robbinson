@@ -35,7 +35,7 @@ export function Footer() {
                 Darrion Robinson
                 </Link>
                 <div className="flex items-center gap-3">
-                  <Image src="/compass.jpg" alt="Compass Logo" width={160} height={40} />
+                  <Image src="/frontgate_compass.jpg" alt="Compass Logo" width={160} height={40} />
                 </div>
                 <p className="text-sm text-muted-foreground">License: 02233342 CA</p>
             </div>
