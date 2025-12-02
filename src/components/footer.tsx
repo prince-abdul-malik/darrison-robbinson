@@ -35,7 +35,7 @@ export function Footer() {
                 Darrion Robinson
                 </Link>
                 <div className="flex items-center gap-3">
-                  <Image src="/frontgate_compass.jpg" alt="Compass Logo" width={160} height={40} />
+                  <Image src="/compass.jpg" alt="Compass Logo" width={160} height={40} />
                 </div>
                 <p className="text-sm text-muted-foreground">License: 02233342 CA</p>
             </div>
@@ -45,8 +45,8 @@ export function Footer() {
                 <div className="mb-4">
                   <h4 className="font-bold font-headline text-lg text-foreground mb-2">Contact Information</h4>
                   <p>Compass</p>
-                  <p>23647 Calabasas Rd, Calabasas, CA 91302</p>
-                  <p>Office: (818) 222-0023</p>
+                  <p>11601 Wilshire Blvd Suite 101, Los Angeles, CA 90025</p>
+                  <p>Office: (310) 820-0195</p>
                   <p>Direct: (818) 269-5059</p>
                   <p>Email: darrioncalabasas@gmail.com</p>
                 </div>
