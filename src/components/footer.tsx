@@ -24,11 +24,13 @@ function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function Footer() {
   const serviceAreas = ["Calabasas", "Malibu", "Beverly Hills", "Santa Monica", "West Hollywood", "Hidden Hills"];
+  const agentName = "Darrion Robinson";
+  const brokerageName = "Compass";
 
   return (
     <footer className="bg-secondary border-t border-border/10">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-8">
             {/* Column 1: Brand */}
             <div className="flex flex-col items-center md:items-start gap-4">
                 <Link href="/" className="font-bold text-2xl font-headline text-foreground">
@@ -76,6 +78,11 @@ export function Footer() {
                     </p>
                 </div>
             </div>
+        </div>
+        <div className="border-t border-border/20 pt-8 text-center text-xs text-muted-foreground">
+          <p>
+            {agentName} is a licensed real estate agent affiliated with {brokerageName}. All material presented herein is intended for informational purposes only. Information is compiled from sources deemed reliable but is subject to errors, omissions, or withdrawal without notice. No statement is made as to the accuracy of any description. All measurements and square footages are approximate. This is not intended to solicit property already listed. Equal Housing Opportunity.
+          </p>
         </div>
       </div>
     </footer>
